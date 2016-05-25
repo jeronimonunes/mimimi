@@ -5,4 +5,4 @@
  * @author jeronimo
  *
  */
-package br.dcc.ufmg.pm.dao.jpa;
+package br.dcc.ufmg.pm.mimimi.dao.jpa;

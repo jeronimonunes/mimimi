@@ -1,7 +1,7 @@
-package br.dcc.ufmg.pm.dao.jpa;
+package br.dcc.ufmg.pm.mimimi.dao.jpa;
 
-import br.dcc.ufmg.pm.model.Connection;
-import br.dcc.ufmg.pm.model.ConnectionId;
+import br.dcc.ufmg.pm.mimimi.model.Connection;
+import br.dcc.ufmg.pm.mimimi.model.ConnectionId;
 
 public class JpaConnectionDao extends AbstractJpaDao<ConnectionId, Connection> {
 

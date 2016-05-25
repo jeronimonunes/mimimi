@@ -2,7 +2,8 @@
  * 
  */
 /**
+ * 
  * @author jeronimo
  *
  */
-package br.dcc.ufmg.pm.beans;
+package br.dcc.ufmg.pm.mimimi.model;

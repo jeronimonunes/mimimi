@@ -1,4 +1,4 @@
-package br.dcc.ufmg.pm.dao;
+package br.dcc.ufmg.pm.mimimi.dao;
 
 public class DaoException extends Exception {
 

@@ -1,4 +1,4 @@
-package br.dcc.ufmg.pm.model;
+package br.dcc.ufmg.pm.mimimi.model;
 
 import java.io.Serializable;
 

@@ -1,11 +1,11 @@
-package br.dcc.ufmg.pm.dao.jpa;
+package br.dcc.ufmg.pm.mimimi.dao.jpa;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-import br.dcc.ufmg.pm.model.User;
+import br.dcc.ufmg.pm.mimimi.model.User;
 
 public class JpaTest {
 	

@@ -1,6 +1,6 @@
-package br.dcc.ufmg.pm.dao.jpa;
+package br.dcc.ufmg.pm.mimimi.dao.jpa;
 
-import br.dcc.ufmg.pm.model.User;
+import br.dcc.ufmg.pm.mimimi.model.User;
 
 public class JpaUserDao extends AbstractJpaDao<String, User> {
 

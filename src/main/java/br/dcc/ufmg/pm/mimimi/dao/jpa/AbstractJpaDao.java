@@ -1,4 +1,4 @@
-package br.dcc.ufmg.pm.dao.jpa;
+package br.dcc.ufmg.pm.mimimi.dao.jpa;
 
 import java.io.Serializable;
 import java.math.BigInteger;
@@ -15,8 +15,8 @@ import javax.persistence.criteria.CriteriaQuery;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import br.dcc.ufmg.pm.dao.Dao;
-import br.dcc.ufmg.pm.model.EntityInterface;
+import br.dcc.ufmg.pm.mimimi.dao.Dao;
+import br.dcc.ufmg.pm.mimimi.model.EntityInterface;
 
 /**
  * Abstract JPA Implementation of the Dao interface

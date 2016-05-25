@@ -1,6 +1,6 @@
-package br.dcc.ufmg.pm.dao.jpa;
+package br.dcc.ufmg.pm.mimimi.dao.jpa;
 
-import br.dcc.ufmg.pm.model.Message;
+import br.dcc.ufmg.pm.mimimi.model.Message;
 
 public class JpaMessageDao extends AbstractJpaDao<Long, Message> {
 

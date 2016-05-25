@@ -1,9 +1,9 @@
-package br.dcc.ufmg.pm.dao;
+package br.dcc.ufmg.pm.mimimi.dao;
 
 import java.io.Serializable;
 import java.util.List;
 
-import br.dcc.ufmg.pm.model.EntityInterface;
+import br.dcc.ufmg.pm.mimimi.model.EntityInterface;
 
 /**
  * Generic interface for all data access objects.
