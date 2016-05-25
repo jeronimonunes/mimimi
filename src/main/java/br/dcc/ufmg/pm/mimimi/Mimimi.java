@@ -8,6 +8,9 @@ import org.apache.catalina.startup.Tomcat;
 import org.apache.catalina.webresources.DirResourceSet;
 import org.apache.catalina.webresources.StandardRoot;
 
+import br.dcc.ufmg.pm.mimimi.beans.LoginBean;
+
+@SuppressWarnings("unused")
 public class Mimimi {
 	
 	public static void main(String[] args) throws Exception {
