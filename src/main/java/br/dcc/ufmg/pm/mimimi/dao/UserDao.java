@@ -4,6 +4,6 @@ import br.dcc.ufmg.pm.mimimi.model.User;
 
 public interface UserDao extends Dao<String,User> {
 
-	public void login(String username, String password);
+	public User login(String username, String password);
 
 }

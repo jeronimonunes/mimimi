@@ -12,6 +12,7 @@
 <h:body>
 	<h:form id="loginForm">
 		<h1>Mimimi</h1>
+		<p:messages id="messages" globalOnly="true"/>
 		<table>
 			<tbody>
 				<tr>
@@ -23,13 +24,13 @@
 				<tr>
 					<td><p:outputLabel for="password"
 							value="#{messages['mimimi.password']}" /></td>
-					<td><p:password id="password" value="#{loginBean.username}" />
+					<td><p:password id="password" value="#{loginBean.password}" />
 					</td>
 				</tr>
 			</tbody>
 		</table>
 		<div style="padding-top: 1em">
-			<p:commandButton action="#{loginBean.login}"
+			<p:commandButton action="#{loginBean.login}" update="messages"
 				value="#{messages['mimimi.login']}" />
 			<p:commandButton action="pretty:signup"
 				value="#{messages['mimimi.signup']}" />

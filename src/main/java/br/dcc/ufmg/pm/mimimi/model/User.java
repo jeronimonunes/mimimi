@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -19,9 +21,14 @@ import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
 @Table(name="users")
+@NamedQueries({
+	@NamedQuery(name=User.LOGIN, query="select u from User u where u.login = :login and u.password = :password")
+})
 public class User implements EntityInterface<String> {
 	
 	private static final long serialVersionUID = 1L;
+	
+	public static final String LOGIN = "user.login";
 
 	@Id
 	private String login;

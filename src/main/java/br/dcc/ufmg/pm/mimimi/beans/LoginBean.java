@@ -3,7 +3,6 @@ package br.dcc.ufmg.pm.mimimi.beans;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-import br.dcc.ufmg.pm.mimimi.dao.UserDao;
 import br.dcc.ufmg.pm.mimimi.dao.jpa.JpaUserDao;
 import br.dcc.ufmg.pm.mimimi.model.User;
 
@@ -20,9 +19,13 @@ public class LoginBean extends AbstractBean {
 	private String password;
 	
 	public String login() {
-		UserDao dao = new JpaUserDao();
-		dao.login(username,password);
-		return null;
+		user = new JpaUserDao().login(username,password);
+		if(user==null){
+			addError("Usuários ou senha inválidos");
+			return null;
+		} else {
+			return "pretty:";
+		}
 	}
 
 	public User getUser() {
