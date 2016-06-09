@@ -27,13 +27,13 @@ h1 {
 	margin: 0.2em;
 }
 
-#loginForm {
+#signUpForm {
 	justify-content: center;
 	display: flex;
 	flex-direction: column;
 }
 
-#loginForm div {
+#signUpForm div {
 	justify-content: flex-end;
 	display: flex;
 }
