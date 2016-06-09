@@ -23,13 +23,13 @@
 				<tr>
 					<td><p:outputLabel for="password"
 							value="#{messages['mimimi.password']}" /></td>
-					<td><p:password id="password" value="#{loginBean.username}" />
+					<td><p:inputText id="password" value="#{loginBean.username}" />
 					</td>
 				</tr>
 			</tbody>
 		</table>
-		<div style="padding: 1em">
-			<p:commandButton action="#{loginBean.login}"
+		<div>
+			<p:commandButton actionListener="#{loginBean.login}"
 				value="#{messages['mimimi.login']}" />
 			<p:commandButton action="pretty:signup"
 				value="#{messages['mimimi.signup']}" />

@@ -2,6 +2,8 @@ target
 .classpath
 .settings
 .project
-database
+production_database
+test_database
+lib
 *.log
 *~
