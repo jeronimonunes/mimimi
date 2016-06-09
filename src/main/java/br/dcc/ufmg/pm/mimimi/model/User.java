@@ -62,6 +62,11 @@ public class User implements EntityInterface<String> {
 	@Fetch(value = FetchMode.SUBSELECT)
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	private List<Message> messages;
+	
+	@Override
+	public String getId() {
+		return getLogin();
+	}
 
 	public String getLogin() {
 		return login;

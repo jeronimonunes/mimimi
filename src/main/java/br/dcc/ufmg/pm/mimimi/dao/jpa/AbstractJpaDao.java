@@ -8,14 +8,18 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import br.dcc.ufmg.pm.mimimi.dao.Dao;
+import br.dcc.ufmg.pm.mimimi.filter.JpaFilter;
 import br.dcc.ufmg.pm.mimimi.model.EntityInterface;
 
 /**
@@ -226,11 +230,10 @@ public abstract class AbstractJpaDao<IdType extends Serializable,T extends Entit
 		if(this.entityManager!=null && this.entityManager.isOpen()){
 			return entityManager;
 		} else {
-//			FacesContext fc = FacesContext.getCurrentInstance();
-//			ExternalContext ec = fc.getExternalContext();
-//			HttpServletRequest request = (HttpServletRequest) ec.getRequest();
-//			entityManager = (EntityManager) request.getAttribute(JpaFilter.ENTITY_MANAGER);
-//			TODO get entity manager from context			
+			FacesContext fc = FacesContext.getCurrentInstance();
+			ExternalContext ec = fc.getExternalContext();
+			HttpServletRequest request = (HttpServletRequest) ec.getRequest();
+			entityManager = (EntityManager) request.getAttribute(JpaFilter.ENTITY_MANAGER);
 			return entityManager;
 		}
 	}
