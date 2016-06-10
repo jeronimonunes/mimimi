@@ -1,0 +1,23 @@
+#topbar {
+	width: 100%;
+	height: 2em;
+	background-color: #FF9900;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 1em;
+	justify-content: space-between;
+}
+
+h1 {
+	font-family: QuinchoScript;
+	font-size: 3em;
+	align-self: center;
+	text-align: center;
+	margin: 0.2em;
+}
+
+@font-face {
+	font-family: QuinchoScript;
+	src: url("#{resource['fonts:QuinchoScript.ttf']}");
+}
