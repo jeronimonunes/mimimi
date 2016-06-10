@@ -6,6 +6,8 @@ import java.util.Calendar;
 
 import org.junit.BeforeClass;
 
+import br.dcc.ufmg.pm.mimimi.dao.DaoFactory;
+import br.dcc.ufmg.pm.mimimi.dao.UserDao;
 import br.dcc.ufmg.pm.mimimi.model.User;
 
 public class UserTest extends AbstractJpaTest<String, User, JpaUserDao>{
@@ -19,10 +21,10 @@ public class UserTest extends AbstractJpaTest<String, User, JpaUserDao>{
 		user = new User();
 		user.setBirthdate(Calendar.getInstance());
 		user.setCity("city1");
-		user.setLogin("user1");
+		user.setUsername("user1");
 		user.setMembersince(Calendar.getInstance());
 		user.setPassword("12345");
-		userDao = new JpaUserDao();
+		userDao = (JpaUserDao) DaoFactory.getInstance().getDao(UserDao.class);
 	}
 	
 	@Override

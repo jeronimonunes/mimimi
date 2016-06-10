@@ -1,16 +1,21 @@
 package br.dcc.ufmg.pm.mimimi.beans;
 
+import java.io.ByteArrayInputStream;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-import br.dcc.ufmg.pm.mimimi.dao.jpa.JpaUserDao;
+import org.primefaces.model.DefaultStreamedContent;
+import org.primefaces.model.StreamedContent;
+
+import br.dcc.ufmg.pm.mimimi.dao.UserDao;
 import br.dcc.ufmg.pm.mimimi.model.User;
 
 @ManagedBean(name="loginBean")
 @SessionScoped
 public class LoginBean extends AbstractBean {
 
-	private static final long serialVersionUID = -6047623020631057290L;
+	private static final long serialVersionUID = 1L;
 
 	private User user;
 	
@@ -18,14 +23,20 @@ public class LoginBean extends AbstractBean {
 	
 	private String password;
 	
+	private String searchQuery;
+	
 	public String login() {
-		user = new JpaUserDao().login(username,password);
+		user = getDao(UserDao.class).login(username,password);
 		if(user==null){
 			addError("Usuários ou senha inválidos");
 			return null;
 		} else {
 			return "pretty:";
 		}
+	}
+	
+	public StreamedContent getPicture() {
+		return new DefaultStreamedContent(new ByteArrayInputStream(user.getPicture()));
 	}
 
 	public User getUser() {
@@ -50,6 +61,14 @@ public class LoginBean extends AbstractBean {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getSearchQuery() {
+		return searchQuery;
+	}
+
+	public void setSearchQuery(String searchQuery) {
+		this.searchQuery = searchQuery;
 	}
 
 }

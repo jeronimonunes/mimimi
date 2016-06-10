@@ -1,12 +1,11 @@
 package br.dcc.ufmg.pm.mimimi.beans;
 
-import javax.faces.bean.ManagedBean;
 import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
 import br.dcc.ufmg.pm.mimimi.dao.DaoException;
 import br.dcc.ufmg.pm.mimimi.dao.UserDao;
-import br.dcc.ufmg.pm.mimimi.dao.jpa.JpaUserDao;
 import br.dcc.ufmg.pm.mimimi.model.User;
 
 @ManagedBean(name="signUpBean")
@@ -19,7 +18,7 @@ public class SignUpBean extends AbstractBean {
 	
 	
 	public void save() {
-		UserDao dao = new JpaUserDao();
+		UserDao dao = getDao(UserDao.class);
 		try {
 			dao.save(getUser());
 		} catch (DaoException e) {

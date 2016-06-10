@@ -129,13 +129,11 @@ public abstract class AbstractJpaDao<IdType extends Serializable,T extends Entit
 	 * @param parameters The parameters of the query.
 	 * @return Returns the entity if found, otherwise returns 0.
 	 */	
+	@SuppressWarnings("unchecked")
 	protected T findSingleResult(String namedQuery, Map<String, Object> parameters) {
-		T result = null;
-		List<T> results = findListResult(namedQuery, parameters);
-		if (results != null && !results.isEmpty()) {
-			result = (T) results.get(0);
-		}
-		return result;
+		Query query = getEntityManager().createNamedQuery(namedQuery);
+		populateQueryParameters(query, parameters);
+		return (T) query.getSingleResult();
 	}	
 
 	/**
@@ -144,12 +142,7 @@ public abstract class AbstractJpaDao<IdType extends Serializable,T extends Entit
 	 * @return Returns the entity if found, otherwise returns 0.
 	 */
 	protected T findSingleResult(String namedQuery) {
-		T result = null;
-		List<T> results = findListResult(namedQuery, null);
-		if (!results.isEmpty()) {
-			result = (T) results.get(0);
-		}
-		return result;
+		return findSingleResult(namedQuery,null);
 	}
 
 	/**
@@ -159,13 +152,11 @@ public abstract class AbstractJpaDao<IdType extends Serializable,T extends Entit
 	 * @param parameters The parameters of the query.
 	 * @return Returns the integer value if found, otherwise returns 0.
 	 */
-	protected int findIntResult(String namedQuery, Map<String, Object> parameters) {
-		int result = 0;
+	@SuppressWarnings("unchecked")
+	protected <V> V findTypedResult(String namedQuery, Map<String, Object> parameters) {
 		Query query = getEntityManager().createNamedQuery(namedQuery);
 		populateQueryParameters(query, parameters);
-		result = (int) query.getSingleResult();
-		flushConnection();
-		return result;		
+		return (V) query.getSingleResult();		
 	}
 
 	/**
@@ -202,7 +193,17 @@ public abstract class AbstractJpaDao<IdType extends Serializable,T extends Entit
 		Query query = getEntityManager().createNamedQuery(namedQuery);
 		populateQueryParameters(query, parameters);
 		result = (List<T>) query.getResultList();
-		return result;		
+		return result;
+	}
+	
+	@SuppressWarnings("unchecked")
+	protected List<T> findListResult(String namedQuery, Map<String, Object> parameters, int first, int size) {
+		List<T> result = null;
+		Query query = getEntityManager().createNamedQuery(namedQuery);
+		populateQueryParameters(query, parameters);
+		query.setFirstResult(first).setMaxResults(first);
+		result = (List<T>) query.getResultList();
+		return result;
 	}
 
 	/**

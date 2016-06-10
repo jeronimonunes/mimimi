@@ -22,7 +22,7 @@ import org.hibernate.annotations.OnDeleteAction;
 @Entity
 @Table(name="users")
 @NamedQueries({
-	@NamedQuery(name=User.LOGIN, query="select u from User u where u.login = :login and u.password = :password")
+	@NamedQuery(name=User.LOGIN, query="select u from User u where u.username = :username and u.password = :password")
 })
 public class User implements EntityInterface<String> {
 	
@@ -31,7 +31,7 @@ public class User implements EntityInterface<String> {
 	public static final String LOGIN = "user.login";
 
 	@Id
-	private String login;
+	private String username;
 	
 	@Column
 	private String name;
@@ -45,6 +45,10 @@ public class User implements EntityInterface<String> {
 	@Lob
 	@Column
 	private byte[] picture;
+	
+	@Lob
+	@Column
+	private byte[] cover;
 	
 	@Column
 	private Calendar birthdate;
@@ -67,23 +71,29 @@ public class User implements EntityInterface<String> {
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	private List<Connection> following;
 	
-	@OneToMany(mappedBy = "user", targetEntity = Message.class, 
+	@OneToMany(mappedBy = "id.user", targetEntity = Like.class,
+			fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@Fetch(value = FetchMode.SUBSELECT)
+	@OnDelete(action = OnDeleteAction.CASCADE)
+	private List<Like> likes;
+	
+	@OneToMany(mappedBy = "user", targetEntity = Mimimi.class, 
 			   fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@Fetch(value = FetchMode.SUBSELECT)
 	@OnDelete(action = OnDeleteAction.CASCADE)
-	private List<Message> messages;
+	private List<Mimimi> mimimis;
 	
 	@Override
 	public String getId() {
-		return getLogin();
+		return getUsername();
 	}
 
-	public String getLogin() {
-		return login;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setLogin(String login) {
-		this.login = login;
+	public void setUsername(String login) {
+		this.username = login;
 	}
 
 	public String getPassword() {
@@ -150,19 +160,19 @@ public class User implements EntityInterface<String> {
 		this.city = city;
 	}
 
-	public List<Message> getMessages() {
-		return messages;
+	public List<Mimimi> getMimimis() {
+		return mimimis;
 	}
 
-	public void setMessages(List<Message> messages) {
-		this.messages = messages;
+	public void setMimimis(List<Mimimi> mimimis) {
+		this.mimimis = mimimis;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((login == null) ? 0 : login.hashCode());
+		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		return result;
 	}
 
@@ -175,10 +185,10 @@ public class User implements EntityInterface<String> {
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
-		if (login == null) {
-			if (other.login != null)
+		if (username == null) {
+			if (other.username != null)
 				return false;
-		} else if (!login.equals(other.login))
+		} else if (!username.equals(other.username))
 			return false;
 		return true;
 	}
@@ -189,6 +199,22 @@ public class User implements EntityInterface<String> {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public List<Like> getLikes() {
+		return likes;
+	}
+
+	public void setLikes(List<Like> likes) {
+		this.likes = likes;
+	}
+
+	public byte[] getCover() {
+		return cover;
+	}
+
+	public void setCover(byte[] cover) {
+		this.cover = cover;
 	}
 	
 }

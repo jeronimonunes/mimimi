@@ -7,7 +7,8 @@
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<class>br.dcc.ufmg.pm.mimimi.model.User</class>
 		<class>br.dcc.ufmg.pm.mimimi.model.Connection</class>
-		<class>br.dcc.ufmg.pm.mimimi.model.Message</class>
+		<class>br.dcc.ufmg.pm.mimimi.model.Mimimi</class>
+		<class>br.dcc.ufmg.pm.mimimi.model.Like</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver" />
 			<!-- if you don't have a database already created append ;create=true 

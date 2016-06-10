@@ -3,12 +3,17 @@ package br.dcc.ufmg.pm.mimimi.beans;
 import java.io.Serializable;
 
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
+import br.dcc.ufmg.pm.mimimi.dao.Dao;
+import br.dcc.ufmg.pm.mimimi.dao.DaoFactory;
 import br.dcc.ufmg.pm.mimimi.filter.JpaFilter;
+import br.dcc.ufmg.pm.mimimi.model.EntityInterface;
 
 public abstract class AbstractBean implements Serializable {
 
@@ -22,6 +27,10 @@ public abstract class AbstractBean implements Serializable {
 		HttpServletRequest request = (HttpServletRequest) ec.getRequest();
 		entityManager = (EntityManager) request.getAttribute(JpaFilter.ENTITY_MANAGER);
 		return entityManager;
+	}
+	
+	protected <IdType extends Serializable,EntityType extends EntityInterface<IdType>,DaoType extends Dao<IdType,EntityType>> DaoType getDao(Class<DaoType> daoClass){
+		return DaoFactory.getInstance().getDao(daoClass);
 	}
 	
 	/**
@@ -42,6 +51,27 @@ public abstract class AbstractBean implements Serializable {
 	
 	protected final void addWarning(String warn){
 		addMessage(new FacesMessage(FacesMessage.SEVERITY_WARN, warn, null));
+	}
+	
+	@SuppressWarnings("unchecked")
+	public static <T> T getSessionBean(HttpSession session,Class<T> beanClass){
+		return (T) session.getAttribute(beanClass.getAnnotation(ManagedBean.class).name());
+	}
+	
+	public static <T> T getSessionBean(Class<T> beanClass){
+		return getSessionBean(getSession(),beanClass);
+	}
+	
+	protected final static HttpSession getSession() {
+		return getHttpServletRequest().getSession();
+	}
+	
+	protected final static HttpServletRequest getHttpServletRequest() {
+		return (HttpServletRequest) getExternalContext().getRequest();
+	}
+	
+	protected final static ExternalContext getExternalContext(){
+		return FacesContext.getCurrentInstance().getExternalContext();
 	}
 	
 }
