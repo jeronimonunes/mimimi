@@ -34,6 +34,9 @@ public class User implements EntityInterface<String> {
 	private String login;
 	
 	@Column
+	private String name;
+	
+	@Column
 	private String password;
 	
 	@Column
@@ -178,6 +181,14 @@ public class User implements EntityInterface<String> {
 		} else if (!login.equals(other.login))
 			return false;
 		return true;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 }

@@ -7,9 +7,43 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:pe="http://primefaces.org/ui/extensions">
 <h:head>
-	
+	<h:outputStylesheet library="css" name="signup.css" />
 </h:head>
 <h:body>
-	<h1>TODO</h1>
+	<h:form id="signUpForm">
+		<h1>Mimimi</h1>
+		<h:panelGrid columns="2" cellpadding="5">
+
+			<p:outputLabel for="user" value="Usuário: " />
+			<p:inputText id="user" value="#{signUpBean.user.login}" required="true"
+			requiredMessage="Todos os campos devem ser preenchidos." />
+
+
+			<p:outputLabel for="feedback" value="Senha: " />
+			<p:password id="feedback" value="#{signUpBean.user.password}"
+				feedback="true" required="true"
+			requiredMessage="Todos os campos devem ser preenchidos."/>
+
+			<p:outputLabel for="name" value="Nome: " />
+			<p:inputText id="name" value="#{signUpBean.user.name}"
+			required="true"
+			requiredMessage="Todos os campos devem ser preenchidos."/>
+
+			<p:outputLabel for="birthday" value="Data de aniversário: " />
+			<p:calendar id="birthday" value="#{signUpBean.user.birthdate}"
+			required="true"
+			requiredMessage="Todos os campos devem ser preenchidos."/>
+			
+
+			<p:outputLabel for="city" value="Cidade: " />
+			<p:inputText id="city" value="#{signUpBean.user.city}"
+			required="true"
+			requiredMessage="Todos os campos devem ser preenchidos."/>
+
+		</h:panelGrid>
+		<div style="padding-top: 1em">
+			<p:commandButton action="#{signUpBean.save}" value="Enviar" />
+		</div>
+	</h:form>
 </h:body>
 </html>
