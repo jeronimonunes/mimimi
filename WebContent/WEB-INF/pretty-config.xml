@@ -11,5 +11,10 @@
 		<pattern value="/signup" />
 		<view-id value="/faces/public/signup.xhtml" />
 	</url-mapping>
+	
+	<url-mapping id="model">
+		<pattern value="/model" />
+		<view-id value="/faces/restricted/model.xhtml" />
+	</url-mapping>
 
 </pretty-config>

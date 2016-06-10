@@ -1,0 +1,29 @@
+#topbar {
+	width: 100%;
+	height: 3em;
+	background-color: #FF9900;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	postion: fixed;
+}
+
+#home {
+	padding: 1em;
+}
+
+#searchfield {
+	padding: 1em;
+}
+
+
+h1 {
+	font-family: QuinchoScript;
+	font-size: 2,5em;
+}
+
+@font-face {
+	font-family: QuinchoScript;
+	src: url("#{resource['fonts:QuinchoScript.ttf']}");
+}

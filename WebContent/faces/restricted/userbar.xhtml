@@ -8,6 +8,39 @@
 	xmlns:pe="http://primefaces.org/ui/extensions">
 <h:body>
 	<ui:composition>
+		<h:outputStylesheet library="css" name="userbar.css" />
+		<div id="userBar">
+			
+			<div id="profilePictureBox">
+				<div id="profilePicture">
+					<p:graphicImage>
+					</p:graphicImage>
+				</div>
+			</div>
+			
+			<div id="coverPhoto">
+				<p:graphicImage>
+				</p:graphicImage>
+			</div>
+
+			<div id="userData">
+				<div id="leftSection">
+					<div id="leftSectionInfo">
+						<h:outputText id="profileName" value="Alexandre Alphonsos"></h:outputText>
+						<h:outputText id="profileUser" value="@alexandrealp"></h:outputText>			
+					</div>
+				</div>
+				<div id="rightSection">
+					<div id="rightSectionInfo">
+						<h:outputText id="mimimi" value="MIMIMIS : 64"></h:outputText>
+						<h:outputText id="following" value="Seguindo: 127"></h:outputText>
+						<h:outputText id="followedby" value="Seguido por: 251"></h:outputText>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
 	</ui:composition>
 </h:body>
 </html>
