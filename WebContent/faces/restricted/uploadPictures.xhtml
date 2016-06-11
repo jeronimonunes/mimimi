@@ -32,7 +32,7 @@
 		</div>
 
 		<div id="profileAndSubmmit">
-			<p:fileUpload fileUploadListener="#{fileUploadView.handleFileUpload}"
+			<p:fileUpload fileUploadListener="#{loginBean.handleFileUpload}"
 				mode="advanced" dragDropSupport="false" multiple="true"
 				update="messages" sizeLimit="1000000000000" fileLimit="2"
 				allowTypes="/(\.|\/)(gif|jpe?g|png)$/" />

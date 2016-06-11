@@ -21,5 +21,30 @@
 		<pattern value="/uploadPictures" />
 		<view-id value="/faces/restricted/uploadPictures.xhtml" />
 	</url-mapping>
+	
+	<url-mapping id="feed">
+		<pattern value="/feed" />
+		<view-id value="/faces/restricted/feed.xhtml" />
+	</url-mapping>
+	
+	<url-mapping id="mimimis">
+		<pattern value="/mimimis" />
+		<view-id value="/faces/restricted/mimimis.xhtml" />
+	</url-mapping>
+	
+	<url-mapping id="following">
+		<pattern value="/following" />
+		<view-id value="/faces/restricted/following.xhtml" />
+	</url-mapping>
+	
+	<url-mapping id="followers">
+		<pattern value="/followers" />
+		<view-id value="/faces/restricted/followers.xhtml" />
+	</url-mapping>
+	
+	<url-mapping id="likes">
+		<pattern value="/likes" />
+		<view-id value="/faces/restricted/likes.xhtml" />
+	</url-mapping>
 
 </pretty-config>

@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+<h:body>
+	<ui:composition>
+		<div id="user">
+			<p:graphicImage id="picture" value="#{headerBean.picture}" width="170" height="170"/>
+			<h:outputText id="name" value="#{headerBean.selectedUser.name}"/>
+			<h:outputText id="username" value="#{headerBean.selectedUser.username}"/>
+			<h:outputText id="description" value="#{headerBean.selectedUser.description}"/>
+			<h:outputText id="city" value="#{headerBean.selectedUser.city}"/>
+			<h:outputText id="member-since" value="#{headerBean.selectedUser.membersince}"/>
+			<h:outputText id="birthdate" value="#{headerBean.selectedUser.birthdate}"/>
+		</div>
+	</ui:composition>
+</h:body>
+</html>

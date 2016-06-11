@@ -2,7 +2,6 @@ package br.dcc.ufmg.pm.mimimi.beans;
 
 import java.io.ByteArrayInputStream;
 
-import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
@@ -30,12 +29,11 @@ public class HeaderBean extends AbstractBean {
 	@ManagedProperty("#{loginBean}")
 	private LoginBean loginBean;
 	
-	@PostConstruct
-	public void init(){
-		selectedUser = getLoginBean().getUser();
+	public HeaderBean() {
 		connectionDao = getDao(ConnectionDao.class);
 		mimimiDao = getDao(MimimiDao.class);
 		likeDao = getDao(LikeDao.class);
+		getSessionBean(LoginBean.class).getUser();
 	}
 	
 	public StreamedContent getCover() {
@@ -68,6 +66,14 @@ public class HeaderBean extends AbstractBean {
 
 	public void setLoginBean(LoginBean loginBean) {
 		this.loginBean = loginBean;
+	}
+
+	public User getSelectedUser() {
+		return selectedUser;
+	}
+
+	public void setSelectedUser(User selectedUser) {
+		this.selectedUser = selectedUser;
 	}
 
 }
