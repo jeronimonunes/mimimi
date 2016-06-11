@@ -31,7 +31,7 @@ public class LoginBean extends AbstractBean {
 			addError("Usuários ou senha inválidos");
 			return null;
 		} else {
-			return "pretty:";
+			return "pretty:feed";
 		}
 	}
 	

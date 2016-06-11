@@ -3,6 +3,7 @@ package br.dcc.ufmg.pm.mimimi.beans;
 import java.io.Serializable;
 
 import javax.faces.application.FacesMessage;
+import javax.faces.application.ResourceHandler;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
@@ -70,8 +71,12 @@ public abstract class AbstractBean implements Serializable {
 		return (HttpServletRequest) getExternalContext().getRequest();
 	}
 	
-	protected final static ExternalContext getExternalContext(){
+	protected final static ExternalContext getExternalContext() {
 		return FacesContext.getCurrentInstance().getExternalContext();
+	}
+	
+	protected final static ResourceHandler getResourceHandler() {
+		return FacesContext.getCurrentInstance().getApplication().getResourceHandler();
 	}
 	
 }

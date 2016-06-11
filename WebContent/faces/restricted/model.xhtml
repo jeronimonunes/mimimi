@@ -13,20 +13,22 @@
 </h:head>
 <h:body style="width:100%; margin: 0 auto;">
 	<ui:include src="topbar.xhtml" />
-	<ui:include src="cover.xhtml" />
-	<div class="ui-g">
-		<div class="ui-g-3">
-			<ui:define name="left">
+	<div style="font-size:0">
+		<ui:include src="cover.xhtml" />
+		<ui:include src="tabs.xhtml"/>
+	</div>
+	<div class="ui-grid-row">
+		<div class="ui-grid-col-3">
+			<ui:insert name="left">
 				<ui:include src="user.xhtml"/>
-			</ui:define>
+			</ui:insert>
 		</div>
-		<div class="ui-g-6">
-			<ui:include src="tabs.xhtml"/>
+		<div class="ui-grid-col-6">
 			<ui:include src="mimimi.xhtml"/>
-			<ui:define name="content" />
+			<ui:insert name="content" />
 		</div>
-		<div class="ui-g-3">
-			<ui:define name="right"/>
+		<div class="ui-grid-col-3">
+			<ui:insert name="right"/>
 		</div>
 	</div>
 </h:body>
