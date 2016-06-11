@@ -1,38 +1,37 @@
 package br.dcc.ufmg.pm.mimimi.beans;
 
-import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.persistence.PersistenceException;
 
-import br.dcc.ufmg.pm.mimimi.dao.DaoException;
 import br.dcc.ufmg.pm.mimimi.dao.UserDao;
 import br.dcc.ufmg.pm.mimimi.model.User;
 
-@ManagedBean(name="signUpBean")
+@ManagedBean(name = "signUpBean")
 @ViewScoped
 public class SignUpBean extends AbstractBean {
-	
-	private static final long serialVersionUID = 1L;
-	
-	private User user;
-	
-	
-	public void save() {
+
+	private static final long serialVersionUID = 3L;
+
+	private User user = new User();
+
+	public String save() {
 		UserDao dao = getDao(UserDao.class);
-		try {
-			dao.save(getUser());
-		} catch (DaoException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			try {
+				dao.save(getUser());
+				addMessage("Cadastro realizado com sucesso!");
+				return "pretty:login";
+			} catch (PersistenceException e) {
+				addError("Não foi possível realizar o cadastro, usuário já existente.");
+				e.printStackTrace();
+				return null;
+			} catch (Exception e) {
+				addError("Não foi possível realizar o cadastro.");
+				e.printStackTrace();
+				return null;
+			}
 	}
-	
-	
-	@PostConstruct
-	private void init(){
-		user = new User();
-	}
-	
+
 	public User getUser() {
 		return user;
 	}
@@ -40,5 +39,7 @@ public class SignUpBean extends AbstractBean {
 	public void setUser(User user) {
 		this.user = user;
 	}
+	
+	
 
 }

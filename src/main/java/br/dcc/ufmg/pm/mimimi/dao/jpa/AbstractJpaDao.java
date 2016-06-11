@@ -11,6 +11,7 @@ import java.util.Map.Entry;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.servlet.http.HttpServletRequest;
@@ -133,7 +134,11 @@ public abstract class AbstractJpaDao<IdType extends Serializable,T extends Entit
 	protected T findSingleResult(String namedQuery, Map<String, Object> parameters) {
 		Query query = getEntityManager().createNamedQuery(namedQuery);
 		populateQueryParameters(query, parameters);
-		return (T) query.getSingleResult();
+		try {
+			return (T) query.getSingleResult();
+		} catch (NoResultException e){
+			return null;
+		}
 	}	
 
 	/**
@@ -156,7 +161,11 @@ public abstract class AbstractJpaDao<IdType extends Serializable,T extends Entit
 	protected <V> V findTypedResult(String namedQuery, Map<String, Object> parameters) {
 		Query query = getEntityManager().createNamedQuery(namedQuery);
 		populateQueryParameters(query, parameters);
-		return (V) query.getSingleResult();		
+		try {
+			return (V) query.getSingleResult();
+		} catch(NoResultException e){
+			return null;
+		}
 	}
 
 	/**

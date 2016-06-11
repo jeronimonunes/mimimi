@@ -1,6 +1,6 @@
 package br.dcc.ufmg.pm.mimimi.model;
 
-import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -51,10 +51,10 @@ public class User implements EntityInterface<String> {
 	private byte[] cover;
 	
 	@Column
-	private Calendar birthdate;
+	private Date birthdate;
 	
 	@Column
-	private Calendar membersince;
+	private Date membersince;
 	
 	@Column
 	private String city;
@@ -136,19 +136,19 @@ public class User implements EntityInterface<String> {
 		this.picture = picture;
 	}
 
-	public Calendar getBirthdate() {
+	public Date getBirthdate() {
 		return birthdate;
 	}
 
-	public void setBirthdate(Calendar birthdate) {
+	public void setBirthdate(Date birthdate) {
 		this.birthdate = birthdate;
 	}
 
-	public Calendar getMembersince() {
+	public Date getMembersince() {
 		return membersince;
 	}
 
-	public void setMembersince(Calendar membersince) {
+	public void setMembersince(Date membersince) {
 		this.membersince = membersince;
 	}
 

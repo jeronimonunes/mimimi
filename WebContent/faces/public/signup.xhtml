@@ -12,37 +12,50 @@
 <h:body>
 	<h:form id="signUpForm">
 		<h1>Mimimi</h1>
-		<h:panelGrid columns="2" cellpadding="5">
+		<p:messages id="messages" globalOnly="true" />
+		<h:panelGrid columns="3" cellpadding="5">
 
 			<p:outputLabel for="user" value="Usuário: " />
-			<p:inputText id="user" value="#{signUpBean.user.login}" required="true"
-			requiredMessage="Todos os campos devem ser preenchidos." />
+			<p:inputText id="user" value="#{signUpBean.user.username}"
+				required="true"
+				requiredMessage="Esse campo deve ser preenchido." />
+			<p:message for="user" />
 
 
 			<p:outputLabel for="feedback" value="Senha: " />
 			<p:password id="feedback" value="#{signUpBean.user.password}"
+				feedback="true" required="true" match="feedback2"
+				requiredMessage="Esse campo deve ser preenchido." />
+			<p:message for="feedback" />
+
+			<p:outputLabel for="feedback2" value="Confirme a Senha: " />
+			<p:password id="feedback2" value="#{signUpBean.user.password}"
 				feedback="true" required="true"
-			requiredMessage="Todos os campos devem ser preenchidos."/>
+				requiredMessage="Esse campo deve ser preenchido." />
+			<p:message for="feedback2" />
 
 			<p:outputLabel for="name" value="Nome: " />
 			<p:inputText id="name" value="#{signUpBean.user.name}"
-			required="true"
-			requiredMessage="Todos os campos devem ser preenchidos."/>
+				required="true"
+				requiredMessage="Esse campo deve ser preenchido." />
+			<p:message for="name" />
 
 			<p:outputLabel for="birthday" value="Data de aniversário: " />
 			<p:calendar id="birthday" value="#{signUpBean.user.birthdate}"
-			required="true"
-			requiredMessage="Todos os campos devem ser preenchidos."/>
-			
+				required="true"
+				requiredMessage="Esse campo deve ser preenchido." />
+			<p:message for="birthday" />
+
 
 			<p:outputLabel for="city" value="Cidade: " />
 			<p:inputText id="city" value="#{signUpBean.user.city}"
-			required="true"
-			requiredMessage="Todos os campos devem ser preenchidos."/>
+				required="true"
+				requiredMessage="Esse campo deve ser preenchido." />
+			<p:message for="city" />
 
 		</h:panelGrid>
 		<div style="padding-top: 1em">
-			<p:commandButton action="#{signUpBean.save}" value="Enviar" />
+			<p:commandButton action="#{signUpBean.save}" value="Enviar" update="messages" />
 		</div>
 	</h:form>
 </h:body>

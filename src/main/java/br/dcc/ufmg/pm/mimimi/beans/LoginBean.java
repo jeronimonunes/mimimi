@@ -15,7 +15,7 @@ import br.dcc.ufmg.pm.mimimi.model.User;
 @SessionScoped
 public class LoginBean extends AbstractBean {
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 4L;
 
 	private User user;
 	
