@@ -16,5 +16,10 @@
 		<pattern value="/model" />
 		<view-id value="/faces/restricted/model.xhtml" />
 	</url-mapping>
+	
+	<url-mapping id="upload">
+		<pattern value="/uploadPictures" />
+		<view-id value="/faces/restricted/uploadPictures.xhtml" />
+	</url-mapping>
 
 </pretty-config>

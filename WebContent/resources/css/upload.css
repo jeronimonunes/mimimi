@@ -1,0 +1,30 @@
+#userBar {
+	width: 100%;
+	height: 20em;
+}
+
+#profilePictureBox {
+	width: 100%;
+	height: 20em;
+	z-index: 1;
+	position: absolute;
+}
+
+#profilePicture {
+	width: 11em;
+	height: 12em;
+	background-color: blue;
+	margin-left: 2em;
+	margin-top: 6em;
+}
+
+#coverPhoto {
+	background-color: #9F9900;
+	width: 100%;
+	height: 65%
+}
+
+#coverUpload {
+	float: right;
+	padding-top: 10em;	
+}
