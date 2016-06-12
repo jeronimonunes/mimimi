@@ -1,6 +1,6 @@
 package br.dcc.ufmg.pm.mimimi.model;
 
-import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -27,7 +27,7 @@ import org.hibernate.annotations.OnDeleteAction;
 @Table(name="mimimis")
 @NamedQueries({
 	@NamedQuery(name=Mimimi.COUNT_MIMIMIS, query="select count(m) from Mimimi m where m.user = :user"),
-	@NamedQuery(name=Mimimi.LIST_BY_USER, query="select m from Mimimi m where m.user = :user"),
+	@NamedQuery(name=Mimimi.LIST_BY_USER, query="select m from Mimimi m where m.user = :user order by m.id desc"),
 	@NamedQuery(name=Mimimi.COUNT_FEED, query="select count(m) from Mimimi m where exists (select c from Connection c where c.id.followed = m.user and c.id.follower = :user) or (m.user = :user)"),
 	@NamedQuery(name=Mimimi.LIST_FEED, query="select m from Mimimi m where exists (select c from Connection c where c.id.followed = m.user and c.id.follower = :user) or (m.user = :user)")
 })
@@ -56,13 +56,26 @@ public class Mimimi implements EntityInterface<Long> {
 	
 	@Column
 	@Temporal(TemporalType.TIMESTAMP)
-	private Calendar date;
+	private Date date;
 	
 	@OneToMany(mappedBy = "id.mimimi", targetEntity = Like.class,
 			fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@Fetch(value = FetchMode.SUBSELECT)
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	private List<Like> likes;
+	
+	public Mimimi() {
+		
+	}
+
+	public Mimimi(String message, User user) {
+		super();
+		this.message = message;
+		this.user = user;
+		this.date = new Date();
+	}
+
+
 
 	public String getMessage() {
 		return message;
@@ -80,11 +93,11 @@ public class Mimimi implements EntityInterface<Long> {
 		this.user = user;
 	}
 
-	public Calendar getDate() {
+	public Date getDate() {
 		return date;
 	}
 
-	public void setDate(Calendar date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 

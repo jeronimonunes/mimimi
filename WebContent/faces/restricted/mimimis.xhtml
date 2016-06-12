@@ -9,6 +9,27 @@
 <h:body>
 	<ui:composition template="model.xhtml">
 		<ui:define name="content">
+			<h:form>
+				<p:dataScroller value="#{mimimisBean.mimimis}" lazy="true" var="mimimi" chunkSize="10">
+					<h:panelGrid columns="2" style="width:100%"	columnClasses="picture,message">
+
+						<p:graphicImage library="pictures" name="user.png"/>
+
+						<p:outputPanel>
+							<h:panelGrid columns="3" cellpadding="5">
+								<h:outputText value="#{mimimi.user.name}" />
+								<h:outputText value="#{mimimi.user.username}" />
+								<h:outputText value="#{mimimi.date}" />
+							</h:panelGrid>
+						</p:outputPanel>
+
+						<p:outputPanel>
+							<h:outputText value="#{mimimi.message}" />
+						</p:outputPanel>
+
+					</h:panelGrid>
+				</p:dataScroller>
+			</h:form>
 		</ui:define>
 	</ui:composition>
 </h:body>

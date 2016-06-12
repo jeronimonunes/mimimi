@@ -8,6 +8,15 @@
 	xmlns:pe="http://primefaces.org/ui/extensions">
 <h:body>
 	<ui:composition>
+		<h:form>
+			<p:inputTextarea value="#{loginBean.mimimiMsg}" rows="5" cols="30" counter="display" maxlength="255"
+				counterTemplate="{0} characters remaining." autoResize="false" />
+			<h:outputText id="display" />
+			
+			<p:commandButton value="MIMIMI!" actionListener="#{loginBean.sendMimimi}"/>
+		</h:form>
+		
+
 	</ui:composition>
 </h:body>
 </html>
