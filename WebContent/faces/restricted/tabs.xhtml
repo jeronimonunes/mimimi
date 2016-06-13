@@ -8,30 +8,30 @@
 	xmlns:pe="http://primefaces.org/ui/extensions">
 <h:body>
 	<ui:composition>
-		<div class="ui-grid ui-grid-responsive">
+		<div id="tabs" class="ui-grid ui-grid-responsive">
 			<div class="ui-grid-row">
 				<div class="ui-grid-col-3"/>
 				<div class="ui-grid-col-6">
-					<div id="tabs">
+					<div id="tabs-block">
 						<h:link outcome="pretty:feed">
 							<span class="fa fa-rss" />
 							<h:outputText value="Feed" />
 						</h:link>
 						<h:link outcome="pretty:mimimis">
-							<h:outputText value="Mimimis" />
-							<h:outputText value="#{headerBean.mimimis}" />
+							<h:outputText styleClass="tabs-label" value="Mimimis" />
+							<h:outputText styleClass="tabs-text" value="#{headerBean.mimimis}" />
 						</h:link>
 						<h:link outcome="pretty:following">
-							<h:outputText value="Seguindo" />
-							<h:outputText value="#{headerBean.following}" />
+							<h:outputText styleClass="tabs-label" value="Seguindo" />
+							<h:outputText styleClass="tabs-text" value="#{headerBean.following}" />
 						</h:link>
 						<h:link outcome="pretty:followers">
-							<h:outputText value="Seguidores" />
-							<h:outputText value="#{headerBean.followers}" />
+							<h:outputText styleClass="tabs-label" value="Seguidores" />
+							<h:outputText styleClass="tabs-text" value="#{headerBean.followers}" />
 						</h:link>
 						<h:link outcome="pretty:likes">
-							<h:outputText value="Curtidos" />
-							<h:outputText value="#{headerBean.likes}" />
+							<h:outputText styleClass="tabs-label" value="Curtidas" />
+							<h:outputText styleClass="tabs-text" value="#{headerBean.likes}" />
 						</h:link>
 					</div>
 				</div>

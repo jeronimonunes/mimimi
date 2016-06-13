@@ -1,15 +1,8 @@
 package br.dcc.ufmg.pm.mimimi.beans;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-
-import javax.faces.application.Resource;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
-
-import org.primefaces.model.DefaultStreamedContent;
-import org.primefaces.model.StreamedContent;
 
 import br.dcc.ufmg.pm.mimimi.dao.ConnectionDao;
 import br.dcc.ufmg.pm.mimimi.dao.LikeDao;
@@ -36,32 +29,6 @@ public class HeaderBean extends AbstractBean {
 		this.mimimiDao = getDao(MimimiDao.class);
 		this.likeDao = getDao(LikeDao.class);
 		this.selectedUser = getSessionBean(LoginBean.class).getUser();
-	}
-
-	public StreamedContent getCover() {
-		try {
-			if(getSelectedUser().getCover()==null){
-				Resource resource = getResourceHandler().createResource("cover.png","pictures");
-				return new DefaultStreamedContent(resource.getInputStream(),resource.getContentType());
-			} else {
-				return new DefaultStreamedContent(new ByteArrayInputStream(selectedUser.getCover()));
-			}
-		} catch (IOException e) {
-			return null;
-		}
-	}
-
-	public StreamedContent getPicture() {
-		try {
-			if(getSelectedUser().getPicture()==null){
-				Resource resource = getResourceHandler().createResource("user.png","pictures");
-				return new DefaultStreamedContent(resource.getInputStream(),resource.getContentType());
-			} else {
-				return new DefaultStreamedContent(new ByteArrayInputStream(selectedUser.getPicture()));
-			}
-		} catch (IOException e) {
-			return null;
-		}
 	}
 
 	public Long getMimimis(){

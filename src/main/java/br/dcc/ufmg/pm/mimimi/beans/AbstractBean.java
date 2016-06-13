@@ -8,6 +8,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -77,6 +78,14 @@ public abstract class AbstractBean implements Serializable {
 	
 	protected final static ResourceHandler getResourceHandler() {
 		return FacesContext.getCurrentInstance().getApplication().getResourceHandler();
+	}
+	
+	protected final static ServletContext getServletContext() {
+		return (ServletContext) getExternalContext().getContext();
+	}
+	
+	protected final static String getRealPath(String path){
+		return getServletContext().getRealPath(path);
 	}
 	
 }

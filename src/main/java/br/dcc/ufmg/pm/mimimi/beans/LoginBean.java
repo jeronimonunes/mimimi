@@ -1,12 +1,15 @@
 package br.dcc.ufmg.pm.mimimi.beans;
 
-import java.io.ByteArrayInputStream;
+import java.awt.Color;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.imageio.ImageIO;
 
-import org.primefaces.model.DefaultStreamedContent;
-import org.primefaces.model.StreamedContent;
+import org.primefaces.event.FileUploadEvent;
 
 import br.dcc.ufmg.pm.mimimi.dao.UserDao;
 import br.dcc.ufmg.pm.mimimi.model.User;
@@ -18,13 +21,13 @@ public class LoginBean extends AbstractBean {
 	private static final long serialVersionUID = 4L;
 
 	private User user;
-	
+
 	private String username;
-	
+
 	private String password;
-	
+
 	private String searchQuery;
-	
+
 	public String login() {
 		user = getDao(UserDao.class).login(username,password);
 		if(user==null){
@@ -34,9 +37,33 @@ public class LoginBean extends AbstractBean {
 			return "pretty:feed";
 		}
 	}
-	
-	public StreamedContent getPicture() {
-		return new DefaultStreamedContent(new ByteArrayInputStream(user.getPicture()));
+
+	public void uploadPicture(FileUploadEvent event) {
+		try {
+			BufferedImage image = ImageIO.read(event.getFile().getInputstream());
+			BufferedImage newImage = new BufferedImage(image.getWidth(),image.getHeight(),BufferedImage.TYPE_INT_RGB);
+			newImage.createGraphics().drawImage(image, 0, 0, Color.WHITE, null);
+			ImageIO.write(newImage, "jpg", new File(getRealPath("/resources/user"),getUser().getId()+".jpg"));
+		} catch (IOException e) {
+			addError("Não foi possível carregar a imagem");
+			e.printStackTrace();
+		}
+	}
+
+	public void uploadCover(FileUploadEvent event) {
+		try {
+			BufferedImage image = ImageIO.read(event.getFile().getInputstream());
+			BufferedImage newImage = new BufferedImage(image.getWidth(),image.getHeight(),BufferedImage.TYPE_INT_RGB);
+			newImage.createGraphics().drawImage(image, 0, 0, Color.WHITE, null);
+			ImageIO.write(newImage, "jpg", new File(getRealPath("/resources/cover"),getUser().getId()+".jpg"));
+		} catch (IOException e) {
+			addError("Não foi possível carregar a imagem");
+			e.printStackTrace();
+		}
+	}
+
+	public void logout() {
+		getSession().invalidate();
 	}
 
 	public User getUser() {

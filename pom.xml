@@ -128,6 +128,13 @@
 			<artifactId>all-themes</artifactId>
 			<version>1.0.10</version>
 		</dependency>
+		<!-- Primefaces, apache commons upload -->
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.3.2</version>
+		</dependency>
+
 		<!-- Pretty Faces -->
 		<dependency>
 			<groupId>com.ocpsoft</groupId>

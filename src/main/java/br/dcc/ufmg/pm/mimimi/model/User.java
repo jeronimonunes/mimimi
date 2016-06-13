@@ -8,7 +8,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -41,14 +40,6 @@ public class User implements EntityInterface<String> {
 	
 	@Column
 	private String description;
-	
-	@Lob
-	@Column
-	private byte[] picture;
-	
-	@Lob
-	@Column
-	private byte[] cover;
 	
 	@Column
 	private Date birthdate;
@@ -128,14 +119,6 @@ public class User implements EntityInterface<String> {
 		this.following = following;
 	}
 
-	public byte[] getPicture() {
-		return picture;
-	}
-
-	public void setPicture(byte[] picture) {
-		this.picture = picture;
-	}
-
 	public Date getBirthdate() {
 		return birthdate;
 	}
@@ -209,12 +192,4 @@ public class User implements EntityInterface<String> {
 		this.likes = likes;
 	}
 
-	public byte[] getCover() {
-		return cover;
-	}
-
-	public void setCover(byte[] cover) {
-		this.cover = cover;
-	}
-	
 }

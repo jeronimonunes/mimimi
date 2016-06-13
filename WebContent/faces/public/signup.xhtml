@@ -25,6 +25,7 @@
 			<p:outputLabel for="feedback" value="Senha: " />
 			<p:password id="feedback" value="#{signUpBean.user.password}"
 				feedback="true" required="true" match="feedback2"
+				validatorMessage="As senhas não conferem"
 				requiredMessage="Esse campo deve ser preenchido." />
 			<p:message for="feedback" />
 
@@ -55,7 +56,7 @@
 
 		</h:panelGrid>
 		<div style="padding-top: 1em">
-			<p:commandButton action="#{signUpBean.save}" value="Enviar" update="messages" />
+			<p:commandButton action="#{signUpBean.save}" value="Enviar" update="@form" />
 		</div>
 	</h:form>
 </h:body>

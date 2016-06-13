@@ -7,6 +7,12 @@
 		<view-id value="/faces/public/login.xhtml" />
 	</url-mapping>
 	
+	<url-mapping id="logout">
+		<pattern value="/logout"/>
+		<view-id value="/faces/public/login.xhtml" />
+		<action>#{loginBean.logout}</action>
+	</url-mapping>
+	
 	<url-mapping id="signup">
 		<pattern value="/signup" />
 		<view-id value="/faces/public/signup.xhtml" />
