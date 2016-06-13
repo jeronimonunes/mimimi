@@ -11,7 +11,9 @@ import javax.imageio.ImageIO;
 
 import org.primefaces.event.FileUploadEvent;
 
+import br.dcc.ufmg.pm.mimimi.dao.MimimiDao;
 import br.dcc.ufmg.pm.mimimi.dao.UserDao;
+import br.dcc.ufmg.pm.mimimi.model.Mimimi;
 import br.dcc.ufmg.pm.mimimi.model.User;
 
 @ManagedBean(name="loginBean")
@@ -21,13 +23,27 @@ public class LoginBean extends AbstractBean {
 	private static final long serialVersionUID = 4L;
 
 	private User user;
-
+	
+	private String mimimiMsg;
+	
 	private String username;
 
 	private String password;
 
 	private String searchQuery;
-
+	
+	public void sendMimimi(){
+		MimimiDao dao = getDao(MimimiDao.class);
+			try {
+				Mimimi mimimi = new Mimimi(getMimimiMsg(),getUser());
+				dao.save(mimimi);
+			
+			} catch (Exception e){
+				addError("Não foi possível Mimimizar.");
+				e.printStackTrace();
+			}
+	}
+	
 	public String login() {
 		user = getDao(UserDao.class).login(username,password);
 		if(user==null){
@@ -97,5 +113,12 @@ public class LoginBean extends AbstractBean {
 	public void setSearchQuery(String searchQuery) {
 		this.searchQuery = searchQuery;
 	}
+	
+	public String getMimimiMsg() {
+		return mimimiMsg;
+	}
 
+	public void setMimimiMsg(String mimimiMsg) {
+		this.mimimiMsg = mimimiMsg;
+	}
 }
