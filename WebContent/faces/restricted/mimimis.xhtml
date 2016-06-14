@@ -1,39 +1,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition template="model.xhtml" xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:pe="http://primefaces.org/ui/extensions">
-<h:body>
-	<ui:composition template="model.xhtml">
-		<ui:define name="content">
-			<ui:include src="mimimi.xhtml" />
-			<h:form>
-				<p:dataScroller value="#{mimimisBean.mimimis}" lazy="true"
-					var="mimimi" chunkSize="10">
-					<div class="mimimi">
-						<p:graphicImage styleClass="mimimi-picture" library="user" name="#{mimimi.user.id}" width="50" />
-						<div class="mimimi-content">
-							<div class="mimimi-header">
-								<h:outputText styleClass="mimimi-header-name" value="#{mimimi.user.name}" />
-								<h:link outcome="pretty:user" styleClass="mimimi-header-username">
-									<f:param name="user" value="#{mimimi.user.id}"/>
-									<h:outputText value="@#{mimimi.user.username}" />
-								</h:link>
-								<h:outputText styleClass="mimimi-header-date" value="#{mimimi.date}">
-									<f:convertDateTime pattern="dd-MM-yyyy" />
-								</h:outputText>
-							</div>
-							<div class="mimimi-text">
-								<h:outputText value="#{mimimi.message}" />
-							</div>
-						</div>
-					</div>
-				</p:dataScroller>
-			</h:form>
-		</ui:define>
-	</ui:composition>
-</h:body>
-</html>
+	<ui:define name="content">
+		<ui:include src="mimimi.xhtml">
+			<ui:param name="mimimiupdate" value=":mimimisForm:mimimis" />
+		</ui:include>
+		<ui:include src="mimimis-list.xhtml">
+			<ui:param name="mimimis" value="#{mimimisBean.mimimis}"/>
+		</ui:include>
+	</ui:define>
+</ui:composition>

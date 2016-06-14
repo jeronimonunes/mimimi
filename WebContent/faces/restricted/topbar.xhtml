@@ -1,25 +1,21 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:pe="http://primefaces.org/ui/extensions">
-<h:body style="width:100%">
-	<ui:composition>
-		<h:outputStylesheet library="css" name="topbar.css" />
-		<div id="topbar">
-			<div id="home">
-				<span class="fa fa-home">Início</span>
-			</div>
-			<h1>M.</h1>
-			<div id="searchfield">
-				<p:inputText value="#{loginBean.searchQuery}" placeholder="Pesquisar..."/>
-				<span class="fa fa-cog">Perfil</span>
-				<h:link outcome="pretty:logout" value="Sair"/>
-			</div>
+	<h:outputStylesheet library="css" name="topbar.css" />
+	<div id="topbar">
+		<div id="home">
+			<span class="fa fa-home">Início</span>
 		</div>
-	</ui:composition>
-</h:body>
-</html>
+		<h1>M.</h1>
+		<div id="searchfield">
+			<p:inputText value="#{loginBean.searchQuery}" placeholder="Pesquisar..."/>
+			<span class="fa fa-cog">Perfil</span>
+			<h:link outcome="pretty:logout" value="Sair"/>
+		</div>
+	</div>
+</ui:composition>

@@ -37,7 +37,7 @@ public class LoginBean extends AbstractBean {
 			try {
 				Mimimi mimimi = new Mimimi(getMimimiMsg(),getUser());
 				dao.save(mimimi);
-			
+				setMimimiMsg(null);
 			} catch (Exception e){
 				addError("Não foi possível Mimimizar.");
 				e.printStackTrace();

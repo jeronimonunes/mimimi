@@ -4,19 +4,19 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
 import br.dcc.ufmg.pm.mimimi.lazy.AbstractLazyList;
-import br.dcc.ufmg.pm.mimimi.lazy.MimimisLazyList;
+import br.dcc.ufmg.pm.mimimi.lazy.FeedLazyList;
 import br.dcc.ufmg.pm.mimimi.model.Mimimi;
 
-@ManagedBean(name="mimimisBean")
+@ManagedBean(name="feedBean")
 @ViewScoped
-public class MimimisBean extends AbstractBean {
+public class FeedBean extends AbstractBean {
 
-	private static final long serialVersionUID = 2L;
+	private static final long serialVersionUID = 1L;
 	
 	private AbstractLazyList<Mimimi> mimimis;
 	
-	public MimimisBean() {
-		setMimimis(new MimimisLazyList(getSessionBean(HeaderBean.class).getSelectedUser()));
+	public FeedBean() {
+		setMimimis(new FeedLazyList(getSessionBean(HeaderBean.class).getSelectedUser()));
 	}
 	
 	public AbstractLazyList<Mimimi> getMimimis() {

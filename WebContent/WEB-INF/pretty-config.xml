@@ -57,5 +57,10 @@
 		<pattern value="/user" />
 		<view-id value="/faces/restricted/mimimis.xhtml" />
 	</url-mapping>
+	
+	<url-mapping id="hashtag">
+		<pattern value="/hashtag" />
+		<view-id value="/faces/restricted/hashtag.xhtml" />
+	</url-mapping>
 
 </pretty-config>
