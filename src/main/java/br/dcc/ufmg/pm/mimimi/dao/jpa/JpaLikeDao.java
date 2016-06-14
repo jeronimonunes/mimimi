@@ -10,6 +10,10 @@ import br.dcc.ufmg.pm.mimimi.model.LikeId;
 import br.dcc.ufmg.pm.mimimi.model.User;
 
 public class JpaLikeDao extends AbstractJpaDao<LikeId, Like> implements LikeDao {
+	
+	protected JpaLikeDao() {
+		
+	}
 
 	@Override
 	public Class<Like> getEntityClass() {

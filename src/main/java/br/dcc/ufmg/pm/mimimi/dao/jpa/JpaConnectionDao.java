@@ -10,6 +10,10 @@ import br.dcc.ufmg.pm.mimimi.model.ConnectionId;
 import br.dcc.ufmg.pm.mimimi.model.User;
 
 public class JpaConnectionDao extends AbstractJpaDao<ConnectionId, Connection> implements ConnectionDao {
+	
+	protected JpaConnectionDao() {
+		
+	}
 
 	@Override
 	public Class<Connection> getEntityClass() {

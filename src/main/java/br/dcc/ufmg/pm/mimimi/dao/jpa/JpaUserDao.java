@@ -10,6 +10,10 @@ import br.dcc.ufmg.pm.mimimi.dao.UserDao;
 import br.dcc.ufmg.pm.mimimi.model.User;
 
 public class JpaUserDao extends AbstractJpaDao<String, User> implements UserDao {
+	
+	protected JpaUserDao() {
+		
+	}
 
 	@Override
 	public Class<User> getEntityClass() {

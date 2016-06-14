@@ -4,32 +4,20 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
-import javax.faces.context.FacesContext;
-import javax.persistence.EntityManager;
-import javax.servlet.http.HttpServletRequest;
-
 import org.primefaces.model.LazyDataModel;
 import org.primefaces.model.SortMeta;
 import org.primefaces.model.SortOrder;
 
-import br.dcc.ufmg.pm.mimimi.filter.JpaFilter;
+import br.dcc.ufmg.pm.mimimi.dao.Dao;
+import br.dcc.ufmg.pm.mimimi.dao.DaoFactory;
 import br.dcc.ufmg.pm.mimimi.model.EntityInterface;
 
 public abstract class AbstractLazyList<T extends EntityInterface<? extends Serializable>> extends LazyDataModel<T>{
 
 	private static final long serialVersionUID = 1L;
-	private EntityManager entityManager;
 	
-	public EntityManager getEntityManager() {
-		if(entityManager==null || !entityManager.isOpen()){
-			HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
-			entityManager = (EntityManager) request.getAttribute(JpaFilter.ENTITY_MANAGER);
-		}
-		return entityManager;
-	}
-
-	public void setEntityManager(EntityManager entityManager) {
-		this.entityManager = entityManager;
+	protected <IdType extends Serializable,EntityType extends EntityInterface<IdType>,DaoType extends Dao<IdType,EntityType>> DaoType getDao(Class<DaoType> daoClass){
+		return DaoFactory.getInstance().getDao(daoClass);
 	}
 	
 	@Override

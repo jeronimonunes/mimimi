@@ -1,7 +1,6 @@
 package br.dcc.ufmg.pm.mimimi.lazy;
 
 import br.dcc.ufmg.pm.mimimi.dao.MimimiDao;
-import br.dcc.ufmg.pm.mimimi.dao.jpa.JpaMimimiDao;
 import br.dcc.ufmg.pm.mimimi.model.Mimimi;
 import br.dcc.ufmg.pm.mimimi.model.User;
 
@@ -15,7 +14,7 @@ public class MimimisLazyList extends AbstractLazyList<Mimimi> {
 	
 	public MimimisLazyList(User user) {
 		this.user = user;
-		mimimiDao = new JpaMimimiDao();
+		mimimiDao = getDao(MimimiDao.class);
 	}
 
 	@Override

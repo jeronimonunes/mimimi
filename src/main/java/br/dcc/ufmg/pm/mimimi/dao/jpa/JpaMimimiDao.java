@@ -9,6 +9,10 @@ import br.dcc.ufmg.pm.mimimi.model.Mimimi;
 import br.dcc.ufmg.pm.mimimi.model.User;
 
 public class JpaMimimiDao extends AbstractJpaDao<Long, Mimimi> implements MimimiDao {
+	
+	protected JpaMimimiDao() {
+		
+	}
 
 	@Override
 	public Class<Mimimi> getEntityClass() {

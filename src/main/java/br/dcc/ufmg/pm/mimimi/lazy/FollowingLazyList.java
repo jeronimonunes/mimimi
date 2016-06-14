@@ -1,7 +1,6 @@
 package br.dcc.ufmg.pm.mimimi.lazy;
 
 import br.dcc.ufmg.pm.mimimi.dao.ConnectionDao;
-import br.dcc.ufmg.pm.mimimi.dao.jpa.JpaConnectionDao;
 import br.dcc.ufmg.pm.mimimi.model.Connection;
 import br.dcc.ufmg.pm.mimimi.model.User;
 
@@ -15,7 +14,7 @@ public class FollowingLazyList extends AbstractLazyList<Connection> {
 	
 	public FollowingLazyList(User user) {
 		this.user = user;
-		connectionDao = new JpaConnectionDao();
+		connectionDao = getDao(ConnectionDao.class);
 	}
 
 	@Override
