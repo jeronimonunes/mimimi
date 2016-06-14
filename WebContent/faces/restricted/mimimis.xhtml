@@ -9,25 +9,28 @@
 <h:body>
 	<ui:composition template="model.xhtml">
 		<ui:define name="content">
+			<ui:include src="mimimi.xhtml" />
 			<h:form>
-				<p:dataScroller value="#{mimimisBean.mimimis}" lazy="true" var="mimimi" chunkSize="10">
-					<h:panelGrid columns="2" style="width:100%"	columnClasses="picture,message">
-
-						<p:graphicImage library="pictures" name="user.png"/>
-
-						<p:outputPanel>
-							<h:panelGrid columns="3" cellpadding="5">
-								<h:outputText value="#{mimimi.user.name}" />
-								<h:outputText value="#{mimimi.user.username}" />
-								<h:outputText value="#{mimimi.date}" />
-							</h:panelGrid>
-						</p:outputPanel>
-
-						<p:outputPanel>
-							<h:outputText value="#{mimimi.message}" />
-						</p:outputPanel>
-
-					</h:panelGrid>
+				<p:dataScroller value="#{mimimisBean.mimimis}" lazy="true"
+					var="mimimi" chunkSize="10">
+					<div class="mimimi">
+						<p:graphicImage styleClass="mimimi-picture" library="user" name="#{mimimi.user.id}" width="50" />
+						<div class="mimimi-content">
+							<div class="mimimi-header">
+								<h:outputText styleClass="mimimi-header-name" value="#{mimimi.user.name}" />
+								<h:link outcome="pretty:user" styleClass="mimimi-header-username">
+									<f:param name="user" value="#{mimimi.user.id}"/>
+									<h:outputText value="@#{mimimi.user.username}" />
+								</h:link>
+								<h:outputText styleClass="mimimi-header-date" value="#{mimimi.date}">
+									<f:convertDateTime pattern="dd-MM-yyyy" />
+								</h:outputText>
+							</div>
+							<div class="mimimi-text">
+								<h:outputText value="#{mimimi.message}" />
+							</div>
+						</div>
+					</div>
 				</p:dataScroller>
 			</h:form>
 		</ui:define>

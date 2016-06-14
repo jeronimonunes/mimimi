@@ -8,14 +8,22 @@
 	xmlns:pe="http://primefaces.org/ui/extensions">
 <h:body>
 	<ui:composition>
-		<h:form>
-			<p:inputTextarea value="#{loginBean.mimimiMsg}" rows="5" cols="30" counter="display" maxlength="255"
-				counterTemplate="{0} characters remaining." autoResize="false" />
-			<h:outputText id="display" />
-			
-			<p:commandButton value="MIMIMI!" actionListener="#{loginBean.sendMimimi}"/>
+		<h:outputStylesheet name="mimimi.css" library="css" />
+		<h:form prependId="false" id="mimimi-form">
+			<div id="mimimi-header">
+				<p:graphicImage styleClass="profile-picture" id="mimimi-picture"
+					name="#{loginBean.user.id}" library="user" width="100" />
+				<p:inputTextarea id="mimimi-input" value="#{loginBean.mimimiMsg}"
+					rows="5" cols="30" counter="mimimi-counter" maxlength="255"
+					counterTemplate="{0}" autoResize="false" />
+			</div>
+			<div id="mimimi-footer">
+				<h:outputText id="mimimi-counter" />
+				<p:commandButton id="mimimi-submit" value="MIMIMI!"
+					actionListener="#{loginBean.sendMimimi}" />
+			</div>
 		</h:form>
-		
+
 
 	</ui:composition>
 </h:body>

@@ -1,0 +1,57 @@
+#mimimi-form {
+	margin-top: 30px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	display: flex;
+}
+
+#mimimi-header {
+	background-color: #FFC164;
+	padding: 6px;
+	display: flex;
+	width: 100%;
+	align-items: center;
+	border: 2px solid #9B5D00;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+#mimimi-footer {
+	width: 100%;
+	padding: 6px;
+	background-color: #9B5D00;
+	border: 2px solid #9B5D00;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+#mimimi-counter {
+	margin-right: 10px;
+	color: #FFC164;
+	font-weight: bold;
+}
+
+#mimimi-input {
+	color: #9B5D00;
+}
+
+#mimimi-submit {
+	background-image: none;
+	background-color: #FFC164;
+	color: #9B5D00;
+	text-shadow: none;
+}
+
+#mimimi-picture {
+	margin-right: 6px;
+	border-radius: 10px;
+	border: 1px solid;
+}
+
+#mimimi-submit:hover {
+	background-color: #FFB039;
+}

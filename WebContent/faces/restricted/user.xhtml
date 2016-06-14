@@ -9,12 +9,12 @@
 <h:body>
 	<ui:composition>
 		<h:form id="user" prependId="false">
-			<p:graphicImage id="picture" library="user" name="#{headerBean.selectedUser.id}" width="170" height="170"/>
-			<p:fileUpload id="picture-upload" rendered="#{loginBean.user eq headerBean.selectedUser}" mode="advanced" skinSimple="true"
-				auto="true" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" oncomplete="updatePicture()" fileUploadListener="#{loginBean.uploadPicture}"/>
+			<p:graphicImage id="picture" styleClass="profile-picture" library="user" name="#{headerBean.selectedUser.id}" height="170"/>
 			<p:outputPanel id="picture-upload-signal" rendered="#{loginBean.user eq headerBean.selectedUser}">
 				<span class="fa fa-camera"/>
 			</p:outputPanel>
+			<p:fileUpload id="picture-upload" rendered="#{loginBean.user eq headerBean.selectedUser}" mode="advanced" skinSimple="true"
+				auto="true" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" oncomplete="updatePicture()" fileUploadListener="#{loginBean.uploadPicture}"/>
 			<div id="user-details">
 				<h:outputText id="name" value="#{headerBean.selectedUser.name}"/>
 				<h:outputText id="username" value="#{headerBean.selectedUser.username}"/>
@@ -22,7 +22,7 @@
 				<h:outputText id="city" value="#{headerBean.selectedUser.city}"/>
 				<h:outputText id="member-since" value="#{headerBean.selectedUser.membersince}"/>
 				<h:outputText id="birthdate" value="#{headerBean.selectedUser.birthdate}">
-					<f:convertDateTime pattern="dd-MM-yyyy" />
+					<f:convertDateTime pattern="dd/MM/yyyy" />
 				</h:outputText>
 			</div>
 		</h:form>

@@ -10,11 +10,11 @@
 	<ui:composition>
 		<h:form prependId="false" style="position: relative">
 			<p:graphicImage id="cover" library="cover" name="#{headerBean.selectedUser.id}"/>
-			<p:fileUpload id="cover-upload" rendered="#{loginBean.user eq headerBean.selectedUser}" mode="advanced" skinSimple="true"
-				auto="true" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" oncomplete="updateCover()" fileUploadListener="#{loginBean.uploadCover}"/>
 			<p:outputPanel id="cover-upload-signal" rendered="#{loginBean.user eq headerBean.selectedUser}">
 				<span class="fa fa-camera"/>
 			</p:outputPanel>
+			<p:fileUpload id="cover-upload" rendered="#{loginBean.user eq headerBean.selectedUser}" mode="advanced" skinSimple="true"
+				auto="true" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" oncomplete="updateCover()" fileUploadListener="#{loginBean.uploadCover}"/>
 		</h:form>
 	</ui:composition>
 </h:body>

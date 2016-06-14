@@ -7,3 +7,6 @@ test_database
 lib
 *.log
 *~
+/WebContent/resources/user/*
+/WebContent/resources/cover/*
+
