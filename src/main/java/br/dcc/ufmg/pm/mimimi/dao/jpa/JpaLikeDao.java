@@ -7,6 +7,7 @@ import java.util.Map;
 import br.dcc.ufmg.pm.mimimi.dao.LikeDao;
 import br.dcc.ufmg.pm.mimimi.model.Like;
 import br.dcc.ufmg.pm.mimimi.model.LikeId;
+import br.dcc.ufmg.pm.mimimi.model.Mimimi;
 import br.dcc.ufmg.pm.mimimi.model.User;
 
 public class JpaLikeDao extends AbstractJpaDao<LikeId, Like> implements LikeDao {
@@ -24,7 +25,7 @@ public class JpaLikeDao extends AbstractJpaDao<LikeId, Like> implements LikeDao 
 	public Long countLikes(User user) {
 		HashMap<String, Object> params = new HashMap<>(1);
 		params.put("user", user);
-		return super.findTypedResult(Like.COUNT_LIKES, params);
+		return super.findSingleResult(Like.COUNT_LIKES, params);
 	}
 
 	@Override
@@ -32,6 +33,13 @@ public class JpaLikeDao extends AbstractJpaDao<LikeId, Like> implements LikeDao 
 		Map<String,Object> params = new HashMap<>(1);
 		params.put("user", user);
 		return super.findListResult(Like.LIST_BY_USER,params,first,size);
+	}
+
+	@Override
+	public List<Mimimi> listMimimisByUser(int first, int size, User user) {
+		Map<String,Object> params = new HashMap<>(1);
+		params.put("user", user);
+		return super.findListResult(Like.LIST_MIMIMIS_BY_USER,params,first,size);
 	}
 
 }

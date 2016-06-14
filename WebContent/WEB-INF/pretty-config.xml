@@ -56,6 +56,7 @@
 	<url-mapping id="user">
 		<pattern value="/user" />
 		<view-id value="/faces/restricted/mimimis.xhtml" />
+		<action>#{headerBean.selectUser}</action>
 	</url-mapping>
 	
 	<url-mapping id="hashtag">

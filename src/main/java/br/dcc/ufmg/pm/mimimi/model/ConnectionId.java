@@ -18,6 +18,15 @@ public class ConnectionId implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="idFollowed", nullable = false)
 	private User followed;
+	
+	public ConnectionId() {
+
+	}
+	
+	public ConnectionId(User follower, User followed) {
+		this.follower = follower;
+		this.followed = followed;
+	}	
 
 	public User getFollower() {
 		return follower;

@@ -19,15 +19,15 @@
 						<h:outputText styleClass="tabs-label" value="Mimimis" />
 						<h:outputText styleClass="tabs-text" value="#{headerBean.mimimis}" />
 					</h:link>
-					<h:link outcome="pretty:following">
+					<h:link outcome="pretty:following" id="following-link">
 						<h:outputText styleClass="tabs-label" value="Seguindo" />
 						<h:outputText styleClass="tabs-text" value="#{headerBean.following}" />
 					</h:link>
-					<h:link outcome="pretty:followers">
+					<h:link outcome="pretty:followers" id="followers-link">
 						<h:outputText styleClass="tabs-label" value="Seguidores" />
 						<h:outputText styleClass="tabs-text" value="#{headerBean.followers}" />
 					</h:link>
-					<h:link outcome="pretty:likes">
+					<h:link outcome="pretty:likes" id="likes-link">
 						<h:outputText styleClass="tabs-label" value="Curtidas" />
 						<h:outputText styleClass="tabs-text" value="#{headerBean.likes}" />
 					</h:link>

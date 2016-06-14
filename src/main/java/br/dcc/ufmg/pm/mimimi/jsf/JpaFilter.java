@@ -1,4 +1,4 @@
-package br.dcc.ufmg.pm.mimimi.filter;
+package br.dcc.ufmg.pm.mimimi.jsf;
 
 import java.io.IOException;
 

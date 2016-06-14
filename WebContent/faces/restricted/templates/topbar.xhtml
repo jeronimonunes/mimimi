@@ -8,14 +8,16 @@
 	xmlns:pe="http://primefaces.org/ui/extensions">
 	<h:outputStylesheet library="css" name="topbar.css" />
 	<div id="topbar">
-		<div id="home">
+		<p:commandLink id="home" action="pretty:feed">
+			<f:setPropertyActionListener value="#{loginBean.user}" target="#{headerBean.selectedUser}"/>
 			<span class="fa fa-home">Início</span>
-		</div>
+		</p:commandLink>
 		<h1>M.</h1>
 		<div id="searchfield">
 			<p:inputText value="#{loginBean.searchQuery}" placeholder="Pesquisar..."/>
-			<span class="fa fa-cog">Perfil</span>
-			<h:link outcome="pretty:logout" value="Sair"/>
+			<p:commandLink action="pretty:logout" style="margin-left:10px">
+				<span class="fa fa-sign-out">Sair</span>
+			</p:commandLink>
 		</div>
 	</div>
 </ui:composition>

@@ -48,6 +48,33 @@ html {
 	margin-top: 0.5em;
 }
 
+#follow-user {
+	margin-top: 20px;
+	width: 50%;
+}
+
+.unpressed {
+	background-image: none;
+	background-color: #FFC164;
+	color: #333333;
+	text-shadow: none;
+}
+
+.unpressed:hover {
+	background-color: #FFB039;
+}
+
+.pressed {
+	background-image: none;
+	background-color: #FFB039;
+	color: #333333;
+	text-shadow: none;
+}
+
+.pressed:hover {
+	background-color: #FFC164;
+}
+
 .ui-fileupload-buttonbar {
 	display: none;
 }
@@ -149,6 +176,14 @@ html {
 	font-size: 14px;
 }
 
+.mimimi-footer {
+	display: flex;
+	justify-content: flex-end;
+	border-top: 1px solid;
+	margin-top: 10px;
+	padding-top: 10px;
+}
+
 .mimimi-header-name {
 	font-weight: bold;
 	color: black;
@@ -160,6 +195,14 @@ html {
 
 .mimimi-header-date {
 	margin-left: 4px;
+}
+
+.liked {
+	color: red!important;
+}
+
+.like-link {
+	margin-left: 10px;
 }
 
 .mimimi-text {
@@ -177,6 +220,6 @@ html {
 
 .ui-datascroller-content.ui-widget-content.ui-corner-all {
 	padding: 0;
-    border: none;
-    margin-top: 70px;
+	border: none;
+	margin-top: 70px;
 }

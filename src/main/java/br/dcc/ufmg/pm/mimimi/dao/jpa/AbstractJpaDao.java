@@ -20,7 +20,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import br.dcc.ufmg.pm.mimimi.dao.Dao;
-import br.dcc.ufmg.pm.mimimi.filter.JpaFilter;
+import br.dcc.ufmg.pm.mimimi.jsf.JpaFilter;
 import br.dcc.ufmg.pm.mimimi.model.EntityInterface;
 
 /**
@@ -131,11 +131,11 @@ public abstract class AbstractJpaDao<IdType extends Serializable,T extends Entit
 	 * @return Returns the entity if found, otherwise returns 0.
 	 */	
 	@SuppressWarnings("unchecked")
-	protected T findSingleResult(String namedQuery, Map<String, Object> parameters) {
+	protected <V> V findSingleResult(String namedQuery, Map<String, Object> parameters) {
 		Query query = getEntityManager().createNamedQuery(namedQuery);
 		populateQueryParameters(query, parameters);
 		try {
-			return (T) query.getSingleResult();
+			return (V) query.getSingleResult();
 		} catch (NoResultException e){
 			return null;
 		}
@@ -146,26 +146,8 @@ public abstract class AbstractJpaDao<IdType extends Serializable,T extends Entit
 	 * @param namedQuery The name of the query.
 	 * @return Returns the entity if found, otherwise returns 0.
 	 */
-	protected T findSingleResult(String namedQuery) {
+	protected <V> V findSingleResult(String namedQuery) {
 		return findSingleResult(namedQuery,null);
-	}
-
-	/**
-	 * Method used to find an {@link Integer} result, 
-	 * given a named query and a set of parameters.
-	 * @param namedQuery The name of the query.
-	 * @param parameters The parameters of the query.
-	 * @return Returns the integer value if found, otherwise returns 0.
-	 */
-	@SuppressWarnings("unchecked")
-	protected <V> V findTypedResult(String namedQuery, Map<String, Object> parameters) {
-		Query query = getEntityManager().createNamedQuery(namedQuery);
-		populateQueryParameters(query, parameters);
-		try {
-			return (V) query.getSingleResult();
-		} catch(NoResultException e){
-			return null;
-		}
 	}
 
 	/**
@@ -186,7 +168,7 @@ public abstract class AbstractJpaDao<IdType extends Serializable,T extends Entit
 	 * @param namedQuery The query.
 	 * @return The list of results of a given query.
 	 */	
-	protected List<T> findListResult(String namedQuery) {
+	protected <V> List<V> findListResult(String namedQuery) {
 		return findListResult(namedQuery, null);
 	}
 
@@ -197,21 +179,21 @@ public abstract class AbstractJpaDao<IdType extends Serializable,T extends Entit
 	 * @return The list of results of a given parameterized query.
 	 */
 	@SuppressWarnings("unchecked")
-	protected List<T> findListResult(String namedQuery, Map<String, Object> parameters) {
-		List<T> result = null;
+	protected <V> List<V> findListResult(String namedQuery, Map<String, Object> parameters) {
+		List<V> result = null;
 		Query query = getEntityManager().createNamedQuery(namedQuery);
 		populateQueryParameters(query, parameters);
-		result = (List<T>) query.getResultList();
+		result = (List<V>) query.getResultList();
 		return result;
 	}
 	
 	@SuppressWarnings("unchecked")
-	protected List<T> findListResult(String namedQuery, Map<String, Object> parameters, int first, int size) {
-		List<T> result = null;
+	protected <V> List<V> findListResult(String namedQuery, Map<String, Object> parameters, int first, int size) {
+		List<V> result = null;
 		Query query = getEntityManager().createNamedQuery(namedQuery);
 		populateQueryParameters(query, parameters);
 		query.setFirstResult(first).setMaxResults(first);
-		result = (List<T>) query.getResultList();
+		result = (List<V>) query.getResultList();
 		return result;
 	}
 

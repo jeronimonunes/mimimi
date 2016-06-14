@@ -13,6 +13,7 @@
 		</p:outputPanel>
 		<p:fileUpload id="picture-upload" rendered="#{loginBean.user eq headerBean.selectedUser}" mode="advanced" skinSimple="true"
 			auto="true" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" oncomplete="updatePicture()" fileUploadListener="#{loginBean.uploadPicture}"/>
+		<p:commandButton id="follow-user" rendered="#{loginBean.user ne headerBean.selectedUser}" styleClass="#{headerBean.followed?'pressed':'unpressed'}" value="Follow"/>
 		<div id="user-details">
 			<h:outputText id="name" value="#{headerBean.selectedUser.name}"/>
 			<h:outputText id="username" value="#{headerBean.selectedUser.username}"/>

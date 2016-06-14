@@ -8,5 +8,11 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:pe="http://primefaces.org/ui/extensions">
 	<ui:define name="content">
+		<ui:include src="templates/mimimi-post.xhtml">
+			<ui:param name="mimimiupdate" value=":mimimisForm:mimimis" />
+		</ui:include>
+		<ui:include src="templates/mimimis-list.xhtml">
+			<ui:param name="mimimis" value="#{hashtagBean.mimimis}" />
+		</ui:include>
 	</ui:define>
 </ui:composition>

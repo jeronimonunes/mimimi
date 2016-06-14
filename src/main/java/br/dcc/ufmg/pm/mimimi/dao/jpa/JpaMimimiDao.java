@@ -23,7 +23,7 @@ public class JpaMimimiDao extends AbstractJpaDao<Long, Mimimi> implements Mimimi
 	public Long countMimimis(User user) {
 		HashMap<String, Object> params = new HashMap<>(1);
 		params.put("user", user);
-		return super.findTypedResult(Mimimi.COUNT_MIMIMIS, params);
+		return super.findSingleResult(Mimimi.COUNT_MIMIMIS, params);
 	}
 
 	@Override
@@ -44,7 +44,21 @@ public class JpaMimimiDao extends AbstractJpaDao<Long, Mimimi> implements Mimimi
 	public Long countFeed(User user) {
 		HashMap<String, Object> params = new HashMap<>(1);
 		params.put("user", user);
-		return super.findTypedResult(Mimimi.COUNT_FEED, params);
+		return super.findSingleResult(Mimimi.COUNT_FEED, params);
+	}
+
+	@Override
+	public List<Mimimi> listMimimisByHashtag(int first, int size, String hashtag) {
+		Map<String,Object> params = new HashMap<>(1);
+		params.put("hashtag", "%#"+hashtag+"%");
+		return super.findListResult(Mimimi.LIST_BY_HASHTAG,params,first,size);
+	}
+
+	@Override
+	public Long countHashtag(String hashtag) {
+		HashMap<String, Object> params = new HashMap<>(1);
+		params.put("hashtag", "%#"+hashtag+"%");
+		return super.findSingleResult(Mimimi.COUNT_BY_HASHTAG, params);
 	}
 
 }

@@ -9,10 +9,14 @@ public interface MimimiDao extends Dao<Long,Mimimi> {
 	
 	public Long countMimimis(User user);
 
-	public List<Mimimi> listMimimisByUser(int first, int pageSize, User user);
+	public List<Mimimi> listMimimisByUser(int first, int size, User user);
 
-	public List<Mimimi> listFeed(int first, int pageSize, User user);
+	public List<Mimimi> listFeed(int first, int size, User user);
 
 	public Long countFeed(User user);
+	
+	public List<Mimimi> listMimimisByHashtag(int first, int size, String hashtag);
+	
+	public Long countHashtag(String hashtag);
 
 }

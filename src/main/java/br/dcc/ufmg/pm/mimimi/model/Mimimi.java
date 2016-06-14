@@ -30,8 +30,10 @@ import org.hibernate.annotations.OnDeleteAction;
 @NamedQueries({
 	@NamedQuery(name=Mimimi.COUNT_MIMIMIS, query="select count(m) from Mimimi m where m.user = :user"),
 	@NamedQuery(name=Mimimi.LIST_BY_USER, query="select m from Mimimi m where m.user = :user order by m.id desc"),
+	@NamedQuery(name=Mimimi.COUNT_BY_HASHTAG, query="select count(m) from Mimimi m where m.message like :hashtag"),
+	@NamedQuery(name=Mimimi.LIST_BY_HASHTAG, query="select m from Mimimi m where m.message like :hashtag order by m.id desc"),
 	@NamedQuery(name=Mimimi.COUNT_FEED, query="select count(m) from Mimimi m where m.user in (select c.id.followed from Connection c where c.id.follower = :user) or (m.user = :user)"),
-	@NamedQuery(name=Mimimi.LIST_FEED, query="select m from Mimimi m where m.user in (select c.id.followed from Connection c where c.id.follower = :user) or (m.user = :user)")
+	@NamedQuery(name=Mimimi.LIST_FEED, query="select m from Mimimi m where m.user in (select c.id.followed from Connection c where c.id.follower = :user) or (m.user = :user) order by m.id desc")
 })
 public class Mimimi implements EntityInterface<Long> {
 
@@ -39,6 +41,8 @@ public class Mimimi implements EntityInterface<Long> {
 
 	public static final String COUNT_MIMIMIS = "mimimi.count";
 	public static final String LIST_BY_USER = "mimimi.list.by.user";
+	public static final String COUNT_BY_HASHTAG = "mimimi.hashtag.count";
+	public static final String LIST_BY_HASHTAG = "mimimi.list.by.hashtag";
 	public static final String LIST_FEED = "mimimi.list.feed";
 	public static final String COUNT_FEED = "mimimi.count.feed";
 

@@ -8,5 +8,9 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:pe="http://primefaces.org/ui/extensions">
 	<ui:define name="content">
+		<ui:include src="templates/mimimis-list.xhtml">
+			<ui:param name="mimimis" value="#{likesBean.mimimis}" />
+		</ui:include>
+		<h:outputScript library="js" name="likes.js"/>
 	</ui:define>
 </ui:composition>

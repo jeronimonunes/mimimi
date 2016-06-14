@@ -24,14 +24,14 @@ public class JpaConnectionDao extends AbstractJpaDao<ConnectionId, Connection> i
 	public Long countFollowing(User user) {
 		HashMap<String, Object> params = new HashMap<>(1);
 		params.put("user", user);
-		return super.findTypedResult(Connection.COUNT_FOLLOWING, params);
+		return super.findSingleResult(Connection.COUNT_FOLLOWING, params);
 	}
 
 	@Override
 	public Long countFollowers(User user) {
 		HashMap<String, Object> params = new HashMap<>(1);
 		params.put("user", user);
-		return super.findTypedResult(Connection.COUNT_FOLLOWERS, params);
+		return super.findSingleResult(Connection.COUNT_FOLLOWERS, params);
 	}
 
 	@Override

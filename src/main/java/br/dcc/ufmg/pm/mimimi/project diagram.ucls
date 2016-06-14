@@ -1,0 +1,764 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.9" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="br.dcc.ufmg.pm.mimimi.Mimimi" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/Mimimi.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="97" width="113" x="543" y="-68"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="br.dcc.ufmg.pm.mimimi.beans.MimimisBean" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/beans/MimimisBean.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="133" width="230" x="2278" y="339"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="br.dcc.ufmg.pm.mimimi.dao.jpa.JpaUserDao" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/dao/jpa/JpaUserDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="169" width="165" x="1026" y="1369"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="br.dcc.ufmg.pm.mimimi.beans.HashtagBean" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/beans/HashtagBean.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="133" width="230" x="2548" y="339"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="5" language="java" name="br.dcc.ufmg.pm.mimimi.dao.ConnectionDao" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/dao/ConnectionDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="133" width="263" x="1974" y="1668"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="6" language="java" name="br.dcc.ufmg.pm.mimimi.dao.jpa.JpaConnectionDao" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/dao/jpa/JpaConnectionDao.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="169" width="263" x="1671" y="1369"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="br.dcc.ufmg.pm.mimimi.dao.jpa.AbstractJpaDao" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/dao/jpa/AbstractJpaDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="439" width="307" x="1505" y="890"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="br.dcc.ufmg.pm.mimimi.jsf.JpaFilter" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/jsf/JpaFilter.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="169" width="304" x="696" y="-68"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="br.dcc.ufmg.pm.mimimi.dao.DaoException" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/dao/DaoException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="97" width="131" x="1040" y="-68"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="br.dcc.ufmg.pm.mimimi.model.Mimimi" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/model/Mimimi.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="547" width="201" x="3486" y="2399"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="11" language="java" name="br.dcc.ufmg.pm.mimimi.model.EntityInterface" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/model/EntityInterface.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="79" width="159" x="3480" y="3267"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="12" language="java" name="br.dcc.ufmg.pm.mimimi.dao.UserDao" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/dao/UserDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="79" width="141" x="1265" y="1668"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="13" language="java" name="br.dcc.ufmg.pm.mimimi.model.ConnectionId" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/model/ConnectionId.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="223" width="145" x="3565" y="1369"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="br.dcc.ufmg.pm.mimimi.beans.HeaderBean" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/beans/HeaderBean.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="259" width="157" x="1974" y="1369"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="br.dcc.ufmg.pm.mimimi.beans.SignUpBean" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/beans/SignUpBean.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="151" width="136" x="3358" y="339"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="br.dcc.ufmg.pm.mimimi.model.Connection" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/model/Connection.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="205" width="172" x="3274" y="2399"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="17" language="java" name="br.dcc.ufmg.pm.mimimi.dao.Dao" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/dao/Dao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="151" width="126" x="1505" y="1369"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="18" language="java" name="br.dcc.ufmg.pm.mimimi.dao.DaoFactory" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/dao/DaoFactory.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="133" width="150" x="343" y="-68"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="br.dcc.ufmg.pm.mimimi.model.Like" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/model/Like.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="241" width="188" x="3520" y="2986"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="br.dcc.ufmg.pm.mimimi.dao.jpa.JpaMimimiDao" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/dao/jpa/JpaMimimiDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="205" width="256" x="2171" y="1369"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="br.dcc.ufmg.pm.mimimi.beans.LoginBean" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/beans/LoginBean.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="511" width="199" x="3534" y="339"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="br.dcc.ufmg.pm.mimimi.dao.jpa.JpaLikeDao" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/dao/jpa/JpaLikeDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="151" width="234" x="1231" y="1369"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="br.dcc.ufmg.pm.mimimi.lazy.AbstractLazyList" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/lazy/AbstractLazyList.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="205" width="295" x="2818" y="890"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="br.dcc.ufmg.pm.mimimi.beans.FeedBean" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/beans/FeedBean.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="133" width="230" x="2818" y="339"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="br.dcc.ufmg.pm.mimimi.lazy.HashtagLazyList" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/lazy/HashtagLazyList.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="133" width="140" x="2638" y="1369"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="br.dcc.ufmg.pm.mimimi.jsf.ResourceHandlerImpl" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/jsf/ResourceHandlerImpl.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1342" y="21"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="br.dcc.ufmg.pm.mimimi.lazy.FeedLazyList" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/lazy/FeedLazyList.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="115" width="131" x="3179" y="1369"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="28" language="java" name="br.dcc.ufmg.pm.mimimi.model.User" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/model/User.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="691" width="198" x="3486" y="1668"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" name="br.dcc.ufmg.pm.mimimi.beans.LikesBean" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/beans/LikesBean.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="133" width="230" x="3088" y="339"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="br.dcc.ufmg.pm.mimimi.model.LikeId" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/model/LikeId.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="151" width="136" x="3750" y="1369"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" name="br.dcc.ufmg.pm.mimimi.lazy.FollowersLazyList" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/lazy/FollowersLazyList.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="115" width="141" x="2818" y="1369"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="32" language="java" name="br.dcc.ufmg.pm.mimimi.dao.MimimiDao" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/dao/MimimiDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="169" width="256" x="2469" y="1668"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="33" language="java" name="br.dcc.ufmg.pm.mimimi.dao.jpa.JpaDaoFactory" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/dao/jpa/JpaDaoFactory.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="133" width="170" x="343" y="339"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="34" language="java" name="br.dcc.ufmg.pm.mimimi.lazy.LikesLazyList" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/lazy/LikesLazyList.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="115" width="131" x="2467" y="1369"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="35" language="java" name="br.dcc.ufmg.pm.mimimi.lazy.FollowingLazyList" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/lazy/FollowingLazyList.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="115" width="140" x="2999" y="1369"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="36" language="java" name="br.dcc.ufmg.pm.mimimi.dao.LikeDao" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/dao/LikeDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="115" width="234" x="1700" y="1668"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="37" language="java" name="br.dcc.ufmg.pm.mimimi.lazy.MimimisLazyList" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/lazy/MimimisLazyList.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="115" width="133" x="3350" y="1369"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="38" language="java" name="br.dcc.ufmg.pm.mimimi.beans.AbstractBean" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/beans/AbstractBean.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="367" width="238" x="2818" y="-68"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="39">    
+    <bendpoint x="3714" y="1668"/>    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="40" name="id"/>      
+      <multiplicity id="41" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="42">    
+    <end type="SOURCE" refId="37" navigable="false">      
+      <attribute id="43" name="mimimiDao"/>      
+      <multiplicity id="44" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="32" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="45">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="46" name="following"/>      
+      <multiplicity id="47" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="48">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="32"/>  
+  </realization>  
+  <association id="49">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="50" name="follower"/>      
+      <multiplicity id="51" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="52">    
+    <bendpoint x="3534" y="890"/>    
+    <bendpoint x="3534" y="1369"/>    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="53" name="user"/>      
+      <multiplicity id="54" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="55">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="7"/>  
+  </generalization>  
+  <association id="56">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="57" name="connectionDao"/>      
+      <multiplicity id="58" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="59">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="60" name="mimimis"/>      
+      <multiplicity id="61" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="62">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="63" name="mimimis"/>      
+      <multiplicity id="64" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="65">    
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="23"/>  
+  </generalization>  
+  <realization id="66">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="12"/>  
+  </realization>  
+  <generalization id="67">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="7"/>  
+  </generalization>  
+  <generalization id="68">    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="23"/>  
+  </generalization>  
+  <association id="69">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="70" name="likeDao"/>      
+      <multiplicity id="71" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="72">    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="23"/>  
+  </generalization>  
+  <realization id="73">    
+    <bendpoint x="3386" y="2986"/>    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="11"/>  
+  </realization>  
+  <realization id="74">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="11"/>  
+  </realization>  
+  <generalization id="75">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="38"/>  
+  </generalization>  
+  <association id="76">    
+    <end type="SOURCE" refId="34" navigable="false">      
+      <attribute id="77" name="likeDao"/>      
+      <multiplicity id="78" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="79">    
+    <end type="SOURCE" refId="31" navigable="false">      
+      <attribute id="80" name="user"/>      
+      <multiplicity id="81" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="82">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
+  <generalization id="83">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="38"/>  
+  </generalization>  
+  <realization id="84">    
+    <bendpoint x="3489" y="2986"/>    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="11"/>  
+  </realization>  
+  <association id="85">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="86" name="user"/>      
+      <multiplicity id="87" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="88">    
+    <bendpoint x="3735" y="1668"/>    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="89" name="mimimi"/>      
+      <multiplicity id="90" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="91">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="38"/>  
+  </generalization>  
+  <association id="92">    
+    <bendpoint x="3513" y="890"/>    
+    <bendpoint x="3513" y="1369"/>    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="93" name="user"/>      
+      <multiplicity id="94" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="95">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="96" name="user"/>      
+      <multiplicity id="97" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="98">    
+    <end type="SOURCE" refId="37" navigable="false">      
+      <attribute id="99" name="user"/>      
+      <multiplicity id="100" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="101">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="102" name="mimimis"/>      
+      <multiplicity id="103" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="104">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="38"/>  
+  </generalization>  
+  <association id="105">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="106" name="INSTANCE"/>      
+      <multiplicity id="107" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="108">    
+    <end type="SOURCE" refId="35" navigable="false">      
+      <attribute id="109" name="connectionDao"/>      
+      <multiplicity id="110" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="111">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="23"/>  
+  </generalization>  
+  <generalization id="112">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="17"/>  
+  </generalization>  
+  <generalization id="113">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="23"/>  
+  </generalization>  
+  <generalization id="114">    
+    <end type="SOURCE" refId="33"/>    
+    <end type="TARGET" refId="18"/>  
+  </generalization>  
+  <generalization id="115">    
+    <end type="SOURCE" refId="37"/>    
+    <end type="TARGET" refId="23"/>  
+  </generalization>  
+  <generalization id="116">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="7"/>  
+  </generalization>  
+  <association id="117">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="118" name="mimimiDao"/>      
+      <multiplicity id="119" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="32" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="120">    
+    <bendpoint x="3759" y="2399"/>    
+    <bendpoint x="3759" y="1668"/>    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="121" name="id"/>      
+      <multiplicity id="122" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="30" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="123">    
+    <end type="SOURCE" refId="31" navigable="false">      
+      <attribute id="124" name="connectionDao"/>      
+      <multiplicity id="125" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="126">    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="17"/>  
+  </generalization>  
+  <realization id="127">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="36"/>  
+  </realization>  
+  <association id="128">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="129" name="likes"/>      
+      <multiplicity id="130" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="131">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="132" name="selectedUser"/>      
+      <multiplicity id="133" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="134">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="135" name="mimimis"/>      
+      <multiplicity id="136" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="137">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="138" name="user"/>      
+      <multiplicity id="139" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="140">    
+    <end type="SOURCE" refId="34" navigable="false">      
+      <attribute id="141" name="user"/>      
+      <multiplicity id="142" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="143">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="144" name="mimimiDao"/>      
+      <multiplicity id="145" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="32" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="146">    
+    <bendpoint x="3738" y="2399"/>    
+    <bendpoint x="3738" y="2986"/>    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="11"/>  
+  </realization>  
+  <generalization id="147">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="38"/>  
+  </generalization>  
+  <association id="148">    
+    <end type="SOURCE" refId="35" navigable="false">      
+      <attribute id="149" name="user"/>      
+      <multiplicity id="150" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="151">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="17"/>  
+  </generalization>  
+  <association id="152">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="153" name="followed"/>      
+      <multiplicity id="154" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="155">    
+    <bendpoint x="3717" y="2399"/>    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="156" name="likes"/>      
+      <multiplicity id="157" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="158">    
+    <bendpoint x="2247" y="890"/>    
+    <bendpoint x="2247" y="339"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="38"/>  
+  </generalization>  
+  <association id="159">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="160" name="followers"/>      
+      <multiplicity id="161" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="162">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="163" name="mimimiDao"/>      
+      <multiplicity id="164" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="32" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="165">    
+    <end type="SOURCE" refId="36"/>    
+    <end type="TARGET" refId="17"/>  
+  </generalization>  
+  <realization id="166">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="17"/>  
+  </realization>  
+  <association id="167">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="168" name="mimimis"/>      
+      <multiplicity id="169" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="170">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="7"/>  
+  </generalization>  
+  <generalization id="171">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="38"/>  
+  </generalization>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

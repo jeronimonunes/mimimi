@@ -7,9 +7,11 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:pe="http://primefaces.org/ui/extensions">
 	<h:form id="mimimisForm">
+	<p:remoteCommand name="deleteMimimiS" update=":mimimis-link :messages" actionListener="#{loginBean.deleteMimimi}"/>
+	<p:remoteCommand name="likeMimimiS" update=":likes-link :messages" actionListener="#{loginBean.likeMimimi}"/>
 	<p:dataScroller value="#{mimimis}" lazy="true"
 		var="mimimi" chunkSize="5" id="mimimis">
-		<div class="mimimi">
+		<div class="mimimi" mimimi-id="#{mimimi.id}">
 			<p:graphicImage styleClass="mimimi-picture" library="user" name="#{mimimi.user.id}" width="50" />
 			<div class="mimimi-content">
 				<div class="mimimi-header">
@@ -24,6 +26,14 @@
 				</div>
 				<div class="mimimi-text">
 					<h:outputText escape="false" value="#{mimimi.getMessageDecorated(request.contextPath)}" />
+				</div>
+				<div class="mimimi-footer">
+					<p:outputPanel rendered="#{loginBean.user eq mimimi.user}" >
+						<span class="fa fa-trash-o" onclick="deleteMimimi(#{mimimi.id})"/>
+					</p:outputPanel>
+					<p:outputPanel styleClass="like-link #{loginBean.isMimimiLiked(mimimi)?'liked':''}" >
+						<span class="fa fa-heart" onclick="likeMimimi(#{mimimi.id})"/>
+					</p:outputPanel>
 				</div>
 			</div>
 		</div>

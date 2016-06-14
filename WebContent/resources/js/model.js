@@ -1,3 +1,13 @@
+function likeMimimi(id){
+	$("div[mimimi-id="+id+"]").find(".like-link").toggleClass("liked");
+	likeMimimiS([{name:"mimimi",value:id}]);
+}
+
+function deleteMimimi(id){
+	$("div[mimimi-id="+id+"]").remove();
+	deleteMimimiS([{name:"mimimi",value:id}]);
+}
+
 function updatePicture(){
 	var pics = $(".profile-picture");
 	for(var i = 0; i<pics.length;i++){

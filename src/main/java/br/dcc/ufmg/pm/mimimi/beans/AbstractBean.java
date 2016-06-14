@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import br.dcc.ufmg.pm.mimimi.dao.Dao;
 import br.dcc.ufmg.pm.mimimi.dao.DaoFactory;
-import br.dcc.ufmg.pm.mimimi.filter.JpaFilter;
+import br.dcc.ufmg.pm.mimimi.jsf.JpaFilter;
 import br.dcc.ufmg.pm.mimimi.model.EntityInterface;
 
 public abstract class AbstractBean implements Serializable {

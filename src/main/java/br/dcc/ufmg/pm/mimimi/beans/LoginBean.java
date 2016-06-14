@@ -10,9 +10,15 @@ import javax.faces.bean.SessionScoped;
 import javax.imageio.ImageIO;
 
 import org.primefaces.event.FileUploadEvent;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import br.dcc.ufmg.pm.mimimi.dao.DaoException;
+import br.dcc.ufmg.pm.mimimi.dao.LikeDao;
 import br.dcc.ufmg.pm.mimimi.dao.MimimiDao;
 import br.dcc.ufmg.pm.mimimi.dao.UserDao;
+import br.dcc.ufmg.pm.mimimi.model.Like;
+import br.dcc.ufmg.pm.mimimi.model.LikeId;
 import br.dcc.ufmg.pm.mimimi.model.Mimimi;
 import br.dcc.ufmg.pm.mimimi.model.User;
 
@@ -21,6 +27,8 @@ import br.dcc.ufmg.pm.mimimi.model.User;
 public class LoginBean extends AbstractBean {
 
 	private static final long serialVersionUID = 4L;
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(LoginBean.class);
 
 	private User user;
 	
@@ -31,6 +39,16 @@ public class LoginBean extends AbstractBean {
 	private String password;
 
 	private String searchQuery;
+	
+	public String login() {
+		user = getDao(UserDao.class).login(username,password);
+		if(user==null){
+			addError("Usuários ou senha inválidos");
+			return null;
+		} else {
+			return "pretty:feed";
+		}
+	}
 	
 	public void sendMimimi(){
 		MimimiDao dao = getDao(MimimiDao.class);
@@ -44,13 +62,44 @@ public class LoginBean extends AbstractBean {
 			}
 	}
 	
-	public String login() {
-		user = getDao(UserDao.class).login(username,password);
-		if(user==null){
-			addError("Usuários ou senha inválidos");
-			return null;
-		} else {
-			return "pretty:feed";
+	public void deleteMimimi() {
+		try {
+			Long id = Long.parseLong(getExternalContext().getRequestParameterMap().get("mimimi"));
+			MimimiDao dao = getDao(MimimiDao.class);
+			Mimimi mimimi = dao.find(id);
+			dao.delete(mimimi);
+			addMessage("Mimimi apagado com sucesso!!!");
+		} catch (DaoException e) {
+			addError("Não foi possível apagar o Mimimi");
+		}
+	}
+	
+	public void likeMimimi() {
+		try {
+			setUser(getDao(UserDao.class).find(getUser().getId()));
+			Long id = Long.parseLong(getExternalContext().getRequestParameterMap().get("mimimi"));
+			Mimimi mimimi = getDao(MimimiDao.class).find(id);
+			LikeId likeId = new LikeId(getUser(),mimimi);
+			LikeDao dao = getDao(LikeDao.class);
+			Like like = dao.find(likeId);
+			if(like==null){
+				like = dao.save(new Like(likeId));
+			} else {
+				dao.delete(like);
+			}
+		} catch (DaoException e) {
+			//If like is duplicated it doesn't matter
+		}
+	}
+	
+	public boolean isMimimiLiked(Mimimi mimimi){
+		try {
+			this.user = getDao(UserDao.class).find(this.user.getId());
+			LikeId id = new LikeId(getUser(),mimimi);
+			return getDao(LikeDao.class).find(id)!=null;
+		} catch (DaoException e) {
+			LOGGER.error("Error while finding out if mimimi was liked",e);
+			return false;
 		}
 	}
 

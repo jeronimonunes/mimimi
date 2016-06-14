@@ -28,7 +28,7 @@
 
 	<filter>
 		<filter-name>Jpa Filter</filter-name>
-		<filter-class>br.dcc.ufmg.pm.mimimi.filter.JpaFilter</filter-class>
+		<filter-class>br.dcc.ufmg.pm.mimimi.jsf.JpaFilter</filter-class>
 	</filter>
 	<filter-mapping>
 		<filter-name>Jpa Filter</filter-name>

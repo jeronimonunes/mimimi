@@ -18,6 +18,15 @@ public class LikeId implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="idMimimi", nullable = false)
 	private Mimimi mimimi;
+	
+	public LikeId() {
+		
+	}
+
+	public LikeId(User user, Mimimi mimimi) {
+		this.user = user;
+		this.mimimi = mimimi;
+	}
 
 	@Override
 	public int hashCode() {

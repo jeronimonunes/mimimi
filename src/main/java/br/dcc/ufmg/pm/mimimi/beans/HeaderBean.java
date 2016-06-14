@@ -1,12 +1,18 @@
 package br.dcc.ufmg.pm.mimimi.beans;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import br.dcc.ufmg.pm.mimimi.dao.ConnectionDao;
+import br.dcc.ufmg.pm.mimimi.dao.DaoException;
 import br.dcc.ufmg.pm.mimimi.dao.LikeDao;
 import br.dcc.ufmg.pm.mimimi.dao.MimimiDao;
+import br.dcc.ufmg.pm.mimimi.dao.UserDao;
+import br.dcc.ufmg.pm.mimimi.model.Connection;
+import br.dcc.ufmg.pm.mimimi.model.ConnectionId;
 import br.dcc.ufmg.pm.mimimi.model.User;
 
 @ManagedBean(name="headerBean")
@@ -14,6 +20,8 @@ import br.dcc.ufmg.pm.mimimi.model.User;
 public class HeaderBean extends AbstractBean {
 
 	private static final long serialVersionUID = 1L;
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(HeaderBean.class);
 
 	private User selectedUser;
 
@@ -21,14 +29,31 @@ public class HeaderBean extends AbstractBean {
 	private ConnectionDao connectionDao;
 	private MimimiDao mimimiDao;
 
-	@ManagedProperty("#{loginBean}")
-	private LoginBean loginBean;
-
 	public HeaderBean() {
 		this.connectionDao = getDao(ConnectionDao.class);
 		this.mimimiDao = getDao(MimimiDao.class);
 		this.likeDao = getDao(LikeDao.class);
 		this.selectedUser = getSessionBean(LoginBean.class).getUser();
+	}
+	
+	public void selectUser() {
+		String id = getExternalContext().getRequestParameterMap().get("user");
+		User user = getEntityManager().find(User.class, id);
+		if(user!=null) setSelectedUser(user);
+	}
+	
+	public boolean isFollowed() {
+		try {
+			LoginBean loginBean = getSessionBean(LoginBean.class);
+			UserDao userDao = getDao(UserDao.class);
+			User follower = userDao.find(loginBean.getUser().getId());
+			User followed = userDao.find(getSelectedUser().getId());
+			Connection connection = getDao(ConnectionDao.class).find(new ConnectionId(follower,followed));
+			return connection!=null;
+		} catch (DaoException e) {
+			LOGGER.error("It was not possible to query Connections",e);
+			return false;
+		}
 	}
 
 	public Long getMimimis(){
@@ -45,14 +70,6 @@ public class HeaderBean extends AbstractBean {
 
 	public Long getLikes(){
 		return likeDao.countLikes(selectedUser);
-	}
-
-	public LoginBean getLoginBean() {
-		return loginBean;
-	}
-
-	public void setLoginBean(LoginBean loginBean) {
-		this.loginBean = loginBean;
 	}
 
 	public User getSelectedUser() {

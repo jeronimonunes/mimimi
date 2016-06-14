@@ -9,6 +9,10 @@
 	postion: fixed;
 }
 
+#topbar a {
+	color: #333333;
+}
+
 #home {
 	padding: 1em;
 }
