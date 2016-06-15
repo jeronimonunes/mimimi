@@ -13,10 +13,13 @@ import org.primefaces.event.FileUploadEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import br.dcc.ufmg.pm.mimimi.dao.ConnectionDao;
 import br.dcc.ufmg.pm.mimimi.dao.DaoException;
 import br.dcc.ufmg.pm.mimimi.dao.LikeDao;
 import br.dcc.ufmg.pm.mimimi.dao.MimimiDao;
 import br.dcc.ufmg.pm.mimimi.dao.UserDao;
+import br.dcc.ufmg.pm.mimimi.model.Connection;
+import br.dcc.ufmg.pm.mimimi.model.ConnectionId;
 import br.dcc.ufmg.pm.mimimi.model.Like;
 import br.dcc.ufmg.pm.mimimi.model.LikeId;
 import br.dcc.ufmg.pm.mimimi.model.Mimimi;
@@ -68,9 +71,26 @@ public class LoginBean extends AbstractBean {
 			MimimiDao dao = getDao(MimimiDao.class);
 			Mimimi mimimi = dao.find(id);
 			dao.delete(mimimi);
-			addMessage("Mimimi apagado com sucesso!!!");
 		} catch (DaoException e) {
 			addError("Não foi possível apagar o Mimimi");
+		}
+	}
+	
+	public void toggleFollow() {
+		try {
+			String id = getExternalContext().getRequestParameterMap().get("user");
+			UserDao dao = getDao(UserDao.class);
+			User user = dao.find(id);
+			ConnectionDao connectionDao = getDao(ConnectionDao.class);
+			ConnectionId conId = new ConnectionId(dao.find(getUser().getId()),user);
+			Connection con = connectionDao.find(conId);
+			if(con==null){
+				connectionDao.save(new Connection(conId));
+			} else {
+				connectionDao.delete(con);
+			}
+		} catch (DaoException e) {
+			addError("Não foi possível apagar a conexão...");
 		}
 	}
 	

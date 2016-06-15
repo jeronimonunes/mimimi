@@ -1,10 +1,9 @@
 package br.dcc.ufmg.pm.mimimi.lazy;
 
 import br.dcc.ufmg.pm.mimimi.dao.ConnectionDao;
-import br.dcc.ufmg.pm.mimimi.model.Connection;
 import br.dcc.ufmg.pm.mimimi.model.User;
 
-public class FollowingLazyList extends AbstractLazyList<Connection> {
+public class FollowingLazyList extends AbstractLazyList<User> {
 	
 	private static final long serialVersionUID = 1L;
 
@@ -19,7 +18,7 @@ public class FollowingLazyList extends AbstractLazyList<Connection> {
 
 	@Override
 	protected int load(int first, int pageSize) {
-		super.setWrappedData(connectionDao.listFollowingByUser(first,pageSize,user));
+		super.setWrappedData(connectionDao.listFollowingUsersByUser(first,pageSize,user));
 		return connectionDao.countFollowing(user).intValue();
 	}
 

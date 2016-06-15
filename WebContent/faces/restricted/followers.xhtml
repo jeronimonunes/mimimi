@@ -8,5 +8,25 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:pe="http://primefaces.org/ui/extensions">
 	<ui:define name="content">
+		<h:form>
+			<p:remoteCommand name="toggleFollowS" actionListener="#{loginBean.toggleFollow}" update=":following-link"/>
+			<p:dataScroller value="#{followersBean.followers}" lazy="true"
+				var="user" chunkSize="5" id="mimimis">
+				<div class="user" user-id="#{user.id}">
+					<p:graphicImage styleClass="user-cover" library="cover" name="#{user.id}" />
+					<div class="user-desc-and-pic">
+						<p:graphicImage styleClass="user-pic" library="user" name="#{user.id}" />
+						<p:commandButton styleClass="follow-button #{followersBean.isFollowed(user)?'pressed':'unpressed'}" value="Follow" type="button" onclick="toggleFollow('#{user.id}')"/>
+					</div>
+					<div class="user-name-row">
+						<h:outputText styleClass="mimimi-header-name" value="#{user.name}" />
+						<h:link outcome="pretty:user" styleClass="mimimi-header-username">
+							<f:param name="user" value="#{user.id}" />
+							<h:outputText value="@#{user.username}" />
+						</h:link>
+					</div>
+				</div>
+			</p:dataScroller>
+		</h:form>
 	</ui:define>
 </ui:composition>

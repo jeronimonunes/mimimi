@@ -19,8 +19,7 @@ html {
 }
 
 #tabs a:hover {
-	border: 1px solid;
-	border-color: #FF9900;
+	border: 1px solid #FF9900;
 	padding: 2px;
 	border-radius: 3px;
 	background-color: #C67700;
@@ -54,25 +53,31 @@ html {
 }
 
 .unpressed {
-	background-image: none;
-	background-color: #FFC164;
-	color: #333333;
-	text-shadow: none;
+	background-image: none!important;
+	background-color: #FFC164!important;
+	color: #333333!important;
+	text-shadow: none!important;
 }
 
 .unpressed:hover {
-	background-color: #FFB039;
+	background-color: #FFB039!important;
 }
 
 .pressed {
-	background-image: none;
-	background-color: #FFB039;
-	color: #333333;
-	text-shadow: none;
+	background-image: none !important;
+	background-color: #FFB039 !important;
+	color: #333333 !important;
+	text-shadow: none !important;
+}
+
+.pressed .ui-button-text.ui-c:before {
+	font: normal normal normal 14px/1 FontAwesome;
+	content: "\f00c";
+	margin-right: 5px;
 }
 
 .pressed:hover {
-	background-color: #FFC164;
+	background-color: #FFC164!important;
 }
 
 .ui-fileupload-buttonbar {
@@ -198,7 +203,7 @@ html {
 }
 
 .liked {
-	color: red!important;
+	color: red !important;
 }
 
 .like-link {
@@ -222,4 +227,38 @@ html {
 	padding: 0;
 	border: none;
 	margin-top: 70px;
+}
+
+.user-cover {
+	width: 100%;
+	max-height: 200px;
+}
+
+.user-pic {
+	height: 100px;
+	border: 1px solid;
+    border-radius: 5px;
+}
+
+.user-desc-and-pic {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	margin-top: -50px;
+	padding-left: 30px;
+	padding-right: 20px;
+}
+
+.user-name-row {
+	font-size: 0.9em;
+	display: flex;
+	flex-direction: column;
+	margin-top: 1em;
+	margin-bottom: 5px;
+	margin-left: 5px;
+}
+
+.user {
+	border: 2px solid #9B5D00;
+	border-radius: 5px;
 }

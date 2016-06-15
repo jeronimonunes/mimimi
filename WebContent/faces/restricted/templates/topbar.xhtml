@@ -14,7 +14,9 @@
 		</p:commandLink>
 		<h1>M.</h1>
 		<div id="searchfield">
-			<p:inputText value="#{loginBean.searchQuery}" placeholder="Pesquisar..."/>
+			<ui:remove>
+				<p:inputText value="#{loginBean.searchQuery}" placeholder="Pesquisar..."/>
+			</ui:remove>
 			<p:commandLink action="pretty:logout" style="margin-left:10px">
 				<span class="fa fa-sign-out">Sair</span>
 			</p:commandLink>

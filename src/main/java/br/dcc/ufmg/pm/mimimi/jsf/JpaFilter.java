@@ -34,10 +34,14 @@ public class JpaFilter implements Filter {
 		try {
 			tx.begin();
 			chain.doFilter(request, response);
-			tx.commit();
+			if(tx.getRollbackOnly()){
+				tx.rollback();
+			} else {
+				tx.commit();
+			}
         } catch (Exception e) {
-        	tx.rollback();
         	e.printStackTrace();
+        	tx.rollback();
         } finally {
         	manager.close();
         }

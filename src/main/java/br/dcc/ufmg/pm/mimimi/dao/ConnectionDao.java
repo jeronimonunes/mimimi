@@ -12,8 +12,8 @@ public interface ConnectionDao extends Dao<ConnectionId,Connection> {
 
 	public Long countFollowers(User user);
 
-	public List<Connection> listFollowersByUser(int first, int pageSize, User user);
+	public List<User> listFollowersUsersByUser(int first, int pageSize, User user);
 
-	public List<Connection> listFollowingByUser(int first, int pageSize, User user);
+	public List<User> listFollowingUsersByUser(int first, int pageSize, User user);
 
 }

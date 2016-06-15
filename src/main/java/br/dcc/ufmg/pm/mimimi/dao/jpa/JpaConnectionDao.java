@@ -35,17 +35,17 @@ public class JpaConnectionDao extends AbstractJpaDao<ConnectionId, Connection> i
 	}
 
 	@Override
-	public List<Connection> listFollowersByUser(int first, int size, User user) {
+	public List<User> listFollowersUsersByUser(int first, int size, User user) {
 		Map<String,Object> params = new HashMap<>(1);
 		params.put("user", user);
-		return super.findListResult(Connection.LIST_FOLLOWERS,params,first,size);
+		return super.findListResult(Connection.LIST_USERS_FOLLOWERS,params,first,size);
 	}
 
 	@Override
-	public List<Connection> listFollowingByUser(int first, int size, User user) {
+	public List<User> listFollowingUsersByUser(int first, int size, User user) {
 		Map<String,Object> params = new HashMap<>(1);
 		params.put("user", user);
-		return super.findListResult(Connection.LIST_FOLLOWING,params,first,size);
+		return super.findListResult(Connection.LIST_USERS_FOLLOWED,params,first,size);
 	}
 
 }

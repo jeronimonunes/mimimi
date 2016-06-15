@@ -225,8 +225,8 @@ public abstract class AbstractJpaDao<IdType extends Serializable,T extends Entit
 			FacesContext fc = FacesContext.getCurrentInstance();
 			ExternalContext ec = fc.getExternalContext();
 			HttpServletRequest request = (HttpServletRequest) ec.getRequest();
-			entityManager = (EntityManager) request.getAttribute(JpaFilter.ENTITY_MANAGER);
-			return entityManager;
+			//If you store entityManager, the JpaDao isn't thread safe
+			return (EntityManager) request.getAttribute(JpaFilter.ENTITY_MANAGER);
 		}
 	}
 

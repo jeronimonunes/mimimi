@@ -1,3 +1,15 @@
+function unfollow(id){
+	$("div[user-id='"+id+"']").remove();
+	toggleFollowS([{name:"user",value:id}]);
+}
+
+function toggleFollow(id){
+	var b = $("div[user-id='"+id+"']").find(".follow-button");
+	b.toggleClass("pressed");
+	b.toggleClass("unpressed");
+	toggleFollowS([{name:"user",value:id}]);
+}
+
 function likeMimimi(id){
 	$("div[mimimi-id="+id+"]").find(".like-link").toggleClass("liked");
 	likeMimimiS([{name:"mimimi",value:id}]);

@@ -38,8 +38,28 @@ public class HeaderBean extends AbstractBean {
 	
 	public void selectUser() {
 		String id = getExternalContext().getRequestParameterMap().get("user");
-		User user = getEntityManager().find(User.class, id);
-		if(user!=null) setSelectedUser(user);
+		if(id!=null){
+			User user = getEntityManager().find(User.class, id);
+			if(user!=null) setSelectedUser(user);
+		}
+	}
+	
+	public void follow() {
+		try {
+			UserDao userDao = getDao(UserDao.class);
+			User follower = userDao.find(getSessionBean(LoginBean.class).getUser().getId());
+			User followed = userDao.find(getSelectedUser().getId());
+			ConnectionDao connectionDao = getDao(ConnectionDao.class);
+			ConnectionId id = new ConnectionId(follower,followed);
+			Connection connection = connectionDao.find(id);
+			if(connection==null){
+				connectionDao.save(new Connection(id));
+			} else {
+				connectionDao.delete(connection);
+			}
+		} catch (Exception e) {
+			LOGGER.error("It was not possible to save/delete Connection",e);
+		}
 	}
 	
 	public boolean isFollowed() {
