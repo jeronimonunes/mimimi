@@ -1,48 +1,57 @@
 package br.dcc.ufmg.pm.mimimi.dao.jpa;
 
-import static org.junit.Assert.assertEquals;
-
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import java.util.Date;
 
-import org.junit.BeforeClass;
+import org.junit.Test;
 
-import br.dcc.ufmg.pm.mimimi.dao.DaoFactory;
+import br.dcc.ufmg.pm.mimimi.dao.DaoException;
 import br.dcc.ufmg.pm.mimimi.dao.UserDao;
 import br.dcc.ufmg.pm.mimimi.model.User;
 
-public class UserTest extends AbstractJpaTest<String, User, JpaUserDao>{
-	
-	private static User user;
-	
-	private static JpaUserDao userDao;
+/**
+ * Unity Test for testing {@link User} and {@link UserDao}
+ * @author Alexandre Alphonsos Rodrigues Pereira
+ * @author Jeronimo Nunes Rocha
+ * @author Felipe Marcelino
+ *
+ */
+public class UserTest extends AbstractJpaTest<String, User, UserDao>{
 
-	@BeforeClass
-	public static void init() {
-		user = new User();
-		user.setBirthdate(new Date());
-		user.setCity("city1");
-		user.setUsername("user1");
-		user.setMembersince(new Date());
-		user.setPassword("12345");
-		userDao = (JpaUserDao) DaoFactory.getInstance().getDao(UserDao.class);
+	public UserTest() {
+		super(UserDao.class);
 	}
-	
+
 	@Override
-	protected User getEntity() {
+	public User generateEntity() {
+		User user = new User();
+		user.setBirthdate(new Date());
+		user.setCity(generateRandomString());
+		user.setUsername(generateRandomString());
+		user.setMembersince(new Date());
+		user.setPassword(generateRandomString());
 		return user;
 	}
 	
-	@Override
-	protected JpaUserDao getDao() {
-		return userDao;
+	/**
+	 * Tests whether login is working
+	 */
+	@Test
+	public void loginTest() {
+		try {
+			User user = generateEntity();
+			String originalPassword = user.getPassword();
+			assertTrue(!originalPassword.equals(getDao().save(user).getPassword()));
+			User login = getDao().login(user.getUsername(), originalPassword);
+			assertNotNull(login);
+			login = getDao().login(user.getUsername(), generateRandomString()+"a");
+			assertNull(login);
+			getDao().delete(user);
+		} catch (DaoException e) {
+			throw new AssertionError("Some Dao Error Happened", e);
+		}
 	}
 	
-	@Override
-	public void update() {
-		getEntity().setCity("city2");
-		userDao.update(getEntity());
-		assertEquals("city2", getEntity().getCity());
-	}
-	
-
 }
