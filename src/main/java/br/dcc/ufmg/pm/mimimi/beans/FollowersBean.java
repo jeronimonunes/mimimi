@@ -15,8 +15,15 @@ import br.dcc.ufmg.pm.mimimi.model.Connection;
 import br.dcc.ufmg.pm.mimimi.model.ConnectionId;
 import br.dcc.ufmg.pm.mimimi.model.User;
 
-@ManagedBean(name="followersBean")
+/**
+ * {@link ManagedBean} to store data about the followers page
+ * @author Alexandre Alphonsos Rodrigues Pereira
+ * @author Jeronimo Nunes Rocha
+ * @author Felipe Marcelino
+ *
+ */
 @ViewScoped
+@ManagedBean(name="followersBean")
 public class FollowersBean extends AbstractBean {
 
 	private static final long serialVersionUID = 1L;
@@ -37,6 +44,11 @@ public class FollowersBean extends AbstractBean {
 		this.followers = following;
 	}
 	
+	/**
+	 * Finds out if the logged user follows the given user
+	 * @param user The user to lookup for
+	 * @return true if the logged user follow the given user, false otherwise
+	 */
 	public boolean isFollowed(User user){
 		try {
 			LoginBean loginBean = getSessionBean(LoginBean.class);

@@ -1,5 +1,5 @@
 all:
-	javac -sourcepath src/main/java -classpath "lib/*" -d target/classes src/main/java/br/dcc/ufmg/pm/mimimi/Mimimi.java
+	javac -sourcepath src/main/java -classpath "lib/*" -d target/classes src/main/java/br/dcc/ufmg/pm/mimimi/Main.java
 
 clean:
 	rm -rf target/classes/*

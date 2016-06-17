@@ -7,8 +7,15 @@ import br.dcc.ufmg.pm.mimimi.lazy.AbstractLazyList;
 import br.dcc.ufmg.pm.mimimi.lazy.HashtagLazyList;
 import br.dcc.ufmg.pm.mimimi.model.Mimimi;
 
-@ManagedBean(name="hashtagBean")
+/**
+ * {@link ManagedBean} to store data about the hashtag page
+ * @author Alexandre Alphonsos Rodrigues Pereira
+ * @author Jeronimo Nunes Rocha
+ * @author Felipe Marcelino
+ *
+ */
 @ViewScoped
+@ManagedBean(name="hashtagBean")
 public class HashtagBean extends AbstractBean {
 
 	private static final long serialVersionUID = 2L;

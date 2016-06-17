@@ -1,5 +1,7 @@
 package br.dcc.ufmg.pm.mimimi.beans;
 
+import java.net.URL;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -15,35 +17,50 @@ import br.dcc.ufmg.pm.mimimi.model.Connection;
 import br.dcc.ufmg.pm.mimimi.model.ConnectionId;
 import br.dcc.ufmg.pm.mimimi.model.User;
 
-@ManagedBean(name="headerBean")
+/**
+ * {@link ManagedBean} to store data about which user is selected
+ * @author Alexandre Alphonsos Rodrigues Pereira
+ * @author Jeronimo Nunes Rocha
+ * @author Felipe Marcelino
+ *
+ */
 @SessionScoped
+@ManagedBean(name="headerBean")
 public class HeaderBean extends AbstractBean {
 
 	private static final long serialVersionUID = 1L;
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(HeaderBean.class);
 
+	/**
+	 * The user currently selected
+	 */
 	private User selectedUser;
 
-	private LikeDao likeDao;
-	private ConnectionDao connectionDao;
-	private MimimiDao mimimiDao;
-
 	public HeaderBean() {
-		this.connectionDao = getDao(ConnectionDao.class);
-		this.mimimiDao = getDao(MimimiDao.class);
-		this.likeDao = getDao(LikeDao.class);
 		this.selectedUser = getSessionBean(LoginBean.class).getUser();
 	}
 	
+	/**
+	 * Method listener of an event called by Pretty Faces when a user {@link URL} is accessed
+	 */
 	public void selectUser() {
 		String id = getExternalContext().getRequestParameterMap().get("user");
 		if(id!=null){
-			User user = getEntityManager().find(User.class, id);
-			if(user!=null) setSelectedUser(user);
+			try {
+				User user = getDao(UserDao.class).find(id);
+				if(user!=null) setSelectedUser(user);
+			} catch (DaoException e) {
+				addError("Não foi possível localizar o usuário solicitado");
+				LOGGER.error("Some DaoException occurred",e);
+			}
 		}
 	}
 	
+	/**
+	 * Method listener of an event that makes the current logged user follow the selected user
+	 * Or unfollow if the {@link Connection} already exists
+	 */
 	public void follow() {
 		try {
 			UserDao userDao = getDao(UserDao.class);
@@ -62,6 +79,10 @@ public class HeaderBean extends AbstractBean {
 		}
 	}
 	
+	/**
+	 * 
+	 * @return true if the selected user is followed by the currently logged user, false otherwise
+	 */
 	public boolean isFollowed() {
 		try {
 			LoginBean loginBean = getSessionBean(LoginBean.class);
@@ -76,20 +97,36 @@ public class HeaderBean extends AbstractBean {
 		}
 	}
 
+	/**
+	 * 
+	 * @return The count number of mimimis of the selected user
+	 */
 	public Long getMimimis(){
-		return mimimiDao.countMimimis(selectedUser);
+		return getDao(MimimiDao.class).countMimimis(selectedUser);
 	}
 
+	/**
+	 * 
+	 * @return The count number of followers of the selected user
+	 */
 	public Long getFollowers(){
-		return connectionDao.countFollowers(selectedUser);
+		return getDao(ConnectionDao.class).countFollowers(selectedUser);
 	}
 
+	/**
+	 * 
+	 * @return The count number of followeds of the selected user
+	 */
 	public Long getFollowing(){
-		return connectionDao.countFollowing(selectedUser);
+		return getDao(ConnectionDao.class).countFollowing(selectedUser);
 	}
 
+	/**
+	 * 
+	 * @return The count number of likes of the selected user
+	 */
 	public Long getLikes(){
-		return likeDao.countLikes(selectedUser);
+		return getDao(LikeDao.class).countLikes(selectedUser);
 	}
 
 	public User getSelectedUser() {

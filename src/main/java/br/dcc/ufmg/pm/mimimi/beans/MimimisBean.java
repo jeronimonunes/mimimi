@@ -7,8 +7,15 @@ import br.dcc.ufmg.pm.mimimi.lazy.AbstractLazyList;
 import br.dcc.ufmg.pm.mimimi.lazy.MimimisLazyList;
 import br.dcc.ufmg.pm.mimimi.model.Mimimi;
 
-@ManagedBean(name="mimimisBean")
+/**
+ * {@link ManagedBean} to store data about the mimimis page
+ * @author Alexandre Alphonsos Rodrigues Pereira
+ * @author Jeronimo Nunes Rocha
+ * @author Felipe Marcelino
+ *
+ */
 @ViewScoped
+@ManagedBean(name="mimimisBean")
 public class MimimisBean extends AbstractBean {
 
 	private static final long serialVersionUID = 2L;

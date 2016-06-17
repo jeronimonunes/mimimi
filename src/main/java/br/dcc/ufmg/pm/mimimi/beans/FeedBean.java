@@ -7,8 +7,15 @@ import br.dcc.ufmg.pm.mimimi.lazy.AbstractLazyList;
 import br.dcc.ufmg.pm.mimimi.lazy.FeedLazyList;
 import br.dcc.ufmg.pm.mimimi.model.Mimimi;
 
-@ManagedBean(name="feedBean")
+/**
+ * {@link ManagedBean} to store data about the feed page
+ * @author Alexandre Alphonsos Rodrigues Pereira
+ * @author Jeronimo Nunes Rocha
+ * @author Felipe Marcelino
+ *
+ */
 @ViewScoped
+@ManagedBean(name="feedBean")
 public class FeedBean extends AbstractBean {
 
 	private static final long serialVersionUID = 1L;

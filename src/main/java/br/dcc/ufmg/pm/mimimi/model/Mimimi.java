@@ -81,7 +81,9 @@ public class Mimimi implements EntityInterface<Long> {
 		this.date = new Date();
 	}
 
-
+	public static void main(String[] args) {
+		System.out.println(new Mimimi("ble #subjsect bli @user bla",null).getMessageDecorated("mimimi"));
+	}
 
 	public String getMessage() {
 		return message;

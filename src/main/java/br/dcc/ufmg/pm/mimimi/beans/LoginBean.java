@@ -25,24 +25,50 @@ import br.dcc.ufmg.pm.mimimi.model.LikeId;
 import br.dcc.ufmg.pm.mimimi.model.Mimimi;
 import br.dcc.ufmg.pm.mimimi.model.User;
 
-@ManagedBean(name="loginBean")
+/**
+ * {@link ManagedBean} to handle data and event from login page and also to keep the logged user
+ * @author Alexandre Alphonsos Rodrigues Pereira
+ * @author Jeronimo Nunes Rocha
+ * @author Felipe Marcelino
+ *
+ */
 @SessionScoped
+@ManagedBean(name="loginBean")
 public class LoginBean extends AbstractBean {
 
 	private static final long serialVersionUID = 4L;
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(LoginBean.class);
 
+	/**
+	 * The logged user
+	 */
 	private User user;
 	
+	/**
+	 * A mimimi to be sent
+	 */
 	private String mimimiMsg;
 	
+	/**
+	 * The username of the user attempting to login
+	 */
 	private String username;
 
+	/**
+	 * The password of the user attempting to login
+	 */
 	private String password;
 
+	/**
+	 * String to be searched, not implemented
+	 */
 	private String searchQuery;
 	
+	/**
+	 * Attempt to login
+	 * @return "pretty:feed" if the login was successful null otherwise
+	 */
 	public String login() {
 		user = getDao(UserDao.class).login(username,password);
 		if(user==null){
@@ -54,6 +80,9 @@ public class LoginBean extends AbstractBean {
 		}
 	}
 	
+	/**
+	 * Sends a new Mimimi with the message given in {@link #mimimiMsg}
+	 */
 	public void sendMimimi(){
 		MimimiDao dao = getDao(MimimiDao.class);
 			try {
@@ -66,6 +95,9 @@ public class LoginBean extends AbstractBean {
 			}
 	}
 	
+	/**
+	 * Method to be a listener to a event of a Mimimi delete
+	 */
 	public void deleteMimimi() {
 		try {
 			Long id = Long.parseLong(getExternalContext().getRequestParameterMap().get("mimimi"));
@@ -77,6 +109,9 @@ public class LoginBean extends AbstractBean {
 		}
 	}
 	
+	/**
+	 * Method to follow or unfollow someone. Event Listener of a faces event
+	 */
 	public void toggleFollow() {
 		try {
 			String id = getExternalContext().getRequestParameterMap().get("user");
@@ -95,6 +130,9 @@ public class LoginBean extends AbstractBean {
 		}
 	}
 	
+	/**
+	 * Method to like or unlike mimimi, listener of an event on the view
+	 */
 	public void likeMimimi() {
 		try {
 			setUser(getDao(UserDao.class).find(getUser().getId()));
@@ -113,6 +151,11 @@ public class LoginBean extends AbstractBean {
 		}
 	}
 	
+	/**
+	 * Method to discover if a {@link Mimimi} is liked
+	 * @param mimimi
+	 * @return
+	 */
 	public boolean isMimimiLiked(Mimimi mimimi){
 		try {
 			this.user = getDao(UserDao.class).find(this.user.getId());
@@ -124,6 +167,10 @@ public class LoginBean extends AbstractBean {
 		}
 	}
 
+	/**
+	 * Method listener of an event that will change the user profile picture
+	 * @param event
+	 */
 	public void uploadPicture(FileUploadEvent event) {
 		try {
 			BufferedImage image = ImageIO.read(event.getFile().getInputstream());
@@ -136,6 +183,10 @@ public class LoginBean extends AbstractBean {
 		}
 	}
 
+	/**
+	 * Method listener of a event that will change the user cover picture
+	 * @param event
+	 */
 	public void uploadCover(FileUploadEvent event) {
 		try {
 			BufferedImage image = ImageIO.read(event.getFile().getInputstream());
@@ -148,6 +199,9 @@ public class LoginBean extends AbstractBean {
 		}
 	}
 
+	/**
+	 * Method listener of an event that PrettyFaces will fire when the user access /logout
+	 */
 	public void logout() {
 		getSession().invalidate();
 	}

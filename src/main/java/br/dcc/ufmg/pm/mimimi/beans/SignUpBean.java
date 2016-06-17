@@ -7,12 +7,22 @@ import javax.persistence.PersistenceException;
 import br.dcc.ufmg.pm.mimimi.dao.UserDao;
 import br.dcc.ufmg.pm.mimimi.model.User;
 
-@ManagedBean(name = "signUpBean")
+/**
+ * Bean to store data on sign up page
+ * @author Alexandre Alphonsos Rodrigues Pereira
+ * @author Jeronimo Nunes Rocha
+ * @author Felipe Marcelino
+ *
+ */
 @ViewScoped
+@ManagedBean(name = "signUpBean")
 public class SignUpBean extends AbstractBean {
 
 	private static final long serialVersionUID = 3L;
 
+	/**
+	 * The user created
+	 */
 	private User user = new User();
 
 	public String save() {
