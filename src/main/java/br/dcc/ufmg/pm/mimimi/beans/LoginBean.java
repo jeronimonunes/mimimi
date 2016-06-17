@@ -49,6 +49,7 @@ public class LoginBean extends AbstractBean {
 			addError("Usuários ou senha inválidos");
 			return null;
 		} else {
+			getSession().setAttribute("logged", Boolean.TRUE);
 			return "pretty:feed";
 		}
 	}
