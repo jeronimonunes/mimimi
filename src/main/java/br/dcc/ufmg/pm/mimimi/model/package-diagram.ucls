@@ -3,7 +3,7 @@
   realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="br.dcc.ufmg.pm.mimimi.model.Like" project="mimimi" 
     file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/model/Like.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="372" y="1686"/>    
+    <position height="-1" width="-1" x="731" y="269"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="br.dcc.ufmg.pm.mimimi.model.Mimimi" project="mimimi" 
     file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/model/Mimimi.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="344" y="1252"/>    
+    <position height="-1" width="-1" x="1130" y="286"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -21,7 +21,7 @@
   </class>  
   <interface id="3" language="java" name="br.dcc.ufmg.pm.mimimi.model.EntityInterface" project="mimimi" 
     file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/model/EntityInterface.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="317" y="1886"/>    
+    <position height="-1" width="-1" x="419" y="52"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,7 +30,7 @@
   </interface>  
   <class id="4" language="java" name="br.dcc.ufmg.pm.mimimi.model.ConnectionId" project="mimimi" 
     file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/model/ConnectionId.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="125" y="111"/>    
+    <position height="-1" width="-1" x="112" y="651"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -39,7 +39,7 @@
   </class>  
   <class id="5" language="java" name="br.dcc.ufmg.pm.mimimi.model.User" project="mimimi" 
     file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/model/User.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="481" y="376"/>    
+    <position height="-1" width="-1" x="417" y="503"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -48,7 +48,7 @@
   </class>  
   <class id="6" language="java" name="br.dcc.ufmg.pm.mimimi.model.Connection" project="mimimi" 
     file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/model/Connection.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="118" y="1081"/>    
+    <position height="-1" width="-1" x="126" y="252"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -57,130 +57,173 @@
   </class>  
   <class id="7" language="java" name="br.dcc.ufmg.pm.mimimi.model.LikeId" project="mimimi" 
     file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/model/LikeId.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="891" y="123"/>    
+    <position height="-1" width="-1" x="824" y="637"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <association id="8">    
-    <bendpoint x="475" y="979"/>    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="9" name="likes"/>      
-      <multiplicity id="10" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="11">    
-    <bendpoint x="144" y="1566"/>    
-    <end type="SOURCE" refId="6"/>    
+  <realization id="8">    
+    <end type="SOURCE" refId="5"/>    
     <end type="TARGET" refId="3"/>  
   </realization>  
-  <association id="12">    
+  <association id="9">    
+    <bendpoint x="259" y="498"/>    
     <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="13" name="mimimis"/>      
-      <multiplicity id="14" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="15">    
-    <bendpoint x="247" y="1566"/>    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="3"/>  
-  </realization>  
-  <association id="16">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="17" name="followers"/>      
-      <multiplicity id="18" minimum="0" maximum="2147483647"/>    
+      <attribute id="10" name="following">        
+        <position height="0" width="0" x="8" y="-829"/>      
+      </attribute>      
+      <multiplicity id="11" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="8" y="-829"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="6" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="19">    
+  <association id="12">    
     <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="20" name="followed"/>      
-      <multiplicity id="21" minimum="0" maximum="1"/>    
+      <attribute id="13" name="followed">        
+        <position height="0" width="0" x="-64" y="127"/>      
+      </attribute>      
+      <multiplicity id="14" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-64" y="127"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="22">    
-    <bendpoint x="112" y="248"/>    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="23" name="id"/>      
-      <multiplicity id="24" minimum="0" maximum="1"/>    
+  <association id="15">    
+    <bendpoint x="198" y="760"/>    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="16" name="follower">        
+        <position height="0" width="0" x="-64" y="127"/>      
+      </attribute>      
+      <multiplicity id="17" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-64" y="127"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
+    <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="25">    
-    <bendpoint x="472" y="248"/>    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="26" name="mimimi"/>      
-      <multiplicity id="27" minimum="0" maximum="1"/>    
+  <association id="18">    
+    <bendpoint x="798" y="461"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="19" name="user">        
+        <position height="0" width="0" x="-64" y="127"/>      
+      </attribute>      
+      <multiplicity id="20" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-64" y="127"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="21">    
+    <bendpoint x="807" y="494"/>    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="22" name="mimimis">        
+        <position height="0" width="0" x="786" y="-966"/>      
+      </attribute>      
+      <multiplicity id="23" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="786" y="-966"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="28">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="29" name="following"/>      
-      <multiplicity id="30" minimum="0" maximum="2147483647"/>    
+  <association id="24">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="25" name="likes">        
+        <position height="0" width="0" x="359" y="-1417"/>      
+      </attribute>      
+      <multiplicity id="26" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="359" y="-1417"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
+    <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="31">    
-    <end type="SOURCE" refId="1"/>    
+  <realization id="27">    
+    <end type="SOURCE" refId="6"/>    
     <end type="TARGET" refId="3"/>  
   </realization>  
-  <association id="32">    
-    <bendpoint x="517" y="979"/>    
-    <bendpoint x="517" y="248"/>    
+  <association id="28">    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="33" name="id"/>      
-      <multiplicity id="34" minimum="0" maximum="1"/>    
+      <attribute id="29" name="id">        
+        <position height="0" width="0" x="-67" y="514"/>      
+      </attribute>      
+      <multiplicity id="30" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-67" y="514"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="35">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="36" name="likes"/>      
-      <multiplicity id="37" minimum="0" maximum="2147483647"/>    
+  <association id="31">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="32" name="id">        
+        <position height="0" width="0" x="-13" y="540"/>      
+      </attribute>      
+      <multiplicity id="33" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-13" y="540"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="34">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="35" name="likes">        
+        <position height="0" width="0" x="359" y="-1417"/>      
+      </attribute>      
+      <multiplicity id="36" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="359" y="-1417"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="38">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="39" name="user"/>      
-      <multiplicity id="40" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="41">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="42" name="follower"/>      
-      <multiplicity id="43" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="44">    
-    <bendpoint x="496" y="979"/>    
-    <bendpoint x="496" y="1566"/>    
-    <end type="SOURCE" refId="5"/>    
+  <realization id="37">    
+    <end type="SOURCE" refId="2"/>    
     <end type="TARGET" refId="3"/>  
   </realization>  
+  <association id="38">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="39" name="followers">        
+        <position height="0" width="0" x="8" y="-829"/>      
+      </attribute>      
+      <multiplicity id="40" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="8" y="-829"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="41">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="3"/>  
+  </realization>  
+  <association id="42">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="43" name="mimimi">        
+        <position height="0" width="0" x="786" y="-966"/>      
+      </attribute>      
+      <multiplicity id="44" minimum="0" maximum="1">        
+        <position height="0" width="0" x="786" y="-966"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <association id="45">    
     <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="46" name="user"/>      
-      <multiplicity id="47" minimum="0" maximum="1"/>    
+      <attribute id="46" name="user">        
+        <position height="0" width="0" x="-64" y="127"/>      
+      </attribute>      
+      <multiplicity id="47" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-64" y="127"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  

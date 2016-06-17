@@ -36,7 +36,7 @@ public class JpaLikeDao extends AbstractJpaDao<LikeId, Like> implements LikeDao 
 	}
 
 	@Override
-	public List<Mimimi> listMimimisByUser(int first, int size, User user) {
+	public List<Mimimi> listLikedMimimisByUser(int first, int size, User user) {
 		Map<String,Object> params = new HashMap<>(1);
 		params.put("user", user);
 		return super.findListResult(Like.LIST_MIMIMIS_BY_USER,params,first,size);

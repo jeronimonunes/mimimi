@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.9" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <interface id="1" language="java" name="br.dcc.ufmg.pm.mimimi.dao.Dao" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/dao/Dao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="151" width="126" x="565" y="95"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="2" language="java" name="br.dcc.ufmg.pm.mimimi.dao.DaoFactory" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/dao/DaoFactory.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="133" width="150" x="188" y="95"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="br.dcc.ufmg.pm.mimimi.dao.DaoException" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/dao/DaoException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="97" width="131" x="391" y="95"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="4" language="java" name="br.dcc.ufmg.pm.mimimi.dao.MimimiDao" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/dao/MimimiDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="169" width="256" x="184" y="286"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="5" language="java" name="br.dcc.ufmg.pm.mimimi.dao.UserDao" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/dao/UserDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="79" width="141" x="480" y="286"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="6" language="java" name="br.dcc.ufmg.pm.mimimi.dao.LikeDao" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/dao/LikeDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="115" width="234" x="661" y="286"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="7" language="java" name="br.dcc.ufmg.pm.mimimi.dao.ConnectionDao" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/dao/ConnectionDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="133" width="260" x="935" y="286"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <generalization id="8">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <generalization id="9">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <association id="10">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="11" name="INSTANCE">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="12" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="13">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <generalization id="14">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

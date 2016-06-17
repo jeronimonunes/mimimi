@@ -2,7 +2,7 @@ package br.dcc.ufmg.pm.mimimi.dao.jpa;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.Calendar;
+import java.util.Date;
 
 import org.junit.BeforeClass;
 
@@ -19,10 +19,10 @@ public class UserTest extends AbstractJpaTest<String, User, JpaUserDao>{
 	@BeforeClass
 	public static void init() {
 		user = new User();
-		user.setBirthdate(Calendar.getInstance());
+		user.setBirthdate(new Date());
 		user.setCity("city1");
 		user.setUsername("user1");
-		user.setMembersince(Calendar.getInstance());
+		user.setMembersince(new Date());
 		user.setPassword("12345");
 		userDao = (JpaUserDao) DaoFactory.getInstance().getDao(UserDao.class);
 	}

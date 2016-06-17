@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.9" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="br.dcc.ufmg.pm.mimimi.lazy.FollowersLazyList" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/lazy/FollowersLazyList.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="151" width="177" x="145" y="119"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="br.dcc.ufmg.pm.mimimi.lazy.LikesLazyList" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/lazy/LikesLazyList.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="151" width="131" x="362" y="119"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="br.dcc.ufmg.pm.mimimi.lazy.AbstractLazyList" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/lazy/AbstractLazyList.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="205" width="295" x="638" y="-126"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="br.dcc.ufmg.pm.mimimi.lazy.FollowingLazyList" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/lazy/FollowingLazyList.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="151" width="177" x="533" y="119"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="br.dcc.ufmg.pm.mimimi.lazy.HashtagLazyList" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/lazy/HashtagLazyList.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="151" width="140" x="750" y="119"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="br.dcc.ufmg.pm.mimimi.lazy.MimimisLazyList" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/lazy/MimimisLazyList.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="151" width="138" x="930" y="119"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="br.dcc.ufmg.pm.mimimi.lazy.FeedLazyList" project="mimimi" 
+    file="/mimimi/src/main/java/br/dcc/ufmg/pm/mimimi/lazy/FeedLazyList.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="151" width="138" x="1108" y="119"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <generalization id="8">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <generalization id="9">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <generalization id="10">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <generalization id="11">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <generalization id="12">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <generalization id="13">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

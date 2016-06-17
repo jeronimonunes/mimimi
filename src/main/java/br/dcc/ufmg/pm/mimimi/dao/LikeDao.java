@@ -13,6 +13,6 @@ public interface LikeDao extends Dao<LikeId,Like> {
 
 	List<Like> listLikesByUser(int first, int size, User user);
 	
-	List<Mimimi> listMimimisByUser(int first, int size, User user);
+	List<Mimimi> listLikedMimimisByUser(int first, int size, User user);
 
 }

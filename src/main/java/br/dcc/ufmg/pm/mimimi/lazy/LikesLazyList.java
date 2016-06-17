@@ -19,7 +19,7 @@ public class LikesLazyList extends AbstractLazyList<Mimimi> {
 
 	@Override
 	protected int load(int first, int pageSize) {
-		super.setWrappedData(likeDao.listMimimisByUser(first,pageSize,user));
+		super.setWrappedData(likeDao.listLikedMimimisByUser(first,pageSize,user));
 		return likeDao.countLikes(user).intValue();
 	}
 

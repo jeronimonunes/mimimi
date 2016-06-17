@@ -1,5 +1,8 @@
 package br.dcc.ufmg.pm.mimimi.model;
 
+import java.util.Date;
+
+import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.NamedQueries;
@@ -29,10 +32,14 @@ public class Like implements EntityInterface<LikeId> {
 
 	public Like(LikeId id) {
 		setId(id);
+		this.date = new Date();
 	}
 
 	@EmbeddedId
 	private LikeId id;
+	
+	@Column
+	private Date date;
 
 	public LikeId getId() {
 		return id;
@@ -40,6 +47,14 @@ public class Like implements EntityInterface<LikeId> {
 
 	public void setId(LikeId id) {
 		this.id = id;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
 	}
 
 	@Override
