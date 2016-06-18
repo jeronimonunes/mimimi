@@ -4,7 +4,6 @@ target
 .project
 production_database
 test_database
-lib
 *.log
 *~
 /WebContent/resources/user/*

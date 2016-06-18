@@ -8,12 +8,51 @@ import org.apache.catalina.startup.Tomcat;
 import org.apache.catalina.webresources.DirResourceSet;
 import org.apache.catalina.webresources.StandardRoot;
 
-import br.dcc.ufmg.pm.mimimi.beans.*;
-import br.dcc.ufmg.pm.mimimi.dao.*;
-import br.dcc.ufmg.pm.mimimi.dao.jpa.*;
-import br.dcc.ufmg.pm.mimimi.jsf.*;
-import br.dcc.ufmg.pm.mimimi.lazy.*;
-import br.dcc.ufmg.pm.mimimi.model.*;
+import br.dcc.ufmg.pm.mimimi.beans.SignUpBean;
+import br.dcc.ufmg.pm.mimimi.beans.FollowingBean;
+import br.dcc.ufmg.pm.mimimi.beans.HeaderBean;
+import br.dcc.ufmg.pm.mimimi.beans.AbstractBean;
+import br.dcc.ufmg.pm.mimimi.beans.FeedBean;
+import br.dcc.ufmg.pm.mimimi.beans.HashtagBean;
+import br.dcc.ufmg.pm.mimimi.beans.LoginBean;
+import br.dcc.ufmg.pm.mimimi.beans.FollowersBean;
+import br.dcc.ufmg.pm.mimimi.beans.MimimisBean;
+import br.dcc.ufmg.pm.mimimi.beans.LikesBean;
+
+import br.dcc.ufmg.pm.mimimi.dao.ConnectionDao;
+import br.dcc.ufmg.pm.mimimi.dao.LikeDao;
+import br.dcc.ufmg.pm.mimimi.dao.MimimiDao;
+import br.dcc.ufmg.pm.mimimi.dao.DaoException;
+import br.dcc.ufmg.pm.mimimi.dao.DaoFactory;
+import br.dcc.ufmg.pm.mimimi.dao.UserDao;
+import br.dcc.ufmg.pm.mimimi.dao.Dao;
+
+import br.dcc.ufmg.pm.mimimi.dao.jpa.JpaConnectionDao;
+import br.dcc.ufmg.pm.mimimi.dao.jpa.AbstractJpaDao;
+import br.dcc.ufmg.pm.mimimi.dao.jpa.JpaLikeDao;
+import br.dcc.ufmg.pm.mimimi.dao.jpa.JpaUserDao;
+import br.dcc.ufmg.pm.mimimi.dao.jpa.JpaDaoFactory;
+import br.dcc.ufmg.pm.mimimi.dao.jpa.JpaMimimiDao;
+
+import br.dcc.ufmg.pm.mimimi.jsf.AuthenticationFilter;
+import br.dcc.ufmg.pm.mimimi.jsf.ResourceHandlerImpl;
+import br.dcc.ufmg.pm.mimimi.jsf.JpaFilter;
+
+import br.dcc.ufmg.pm.mimimi.lazy.FeedLazyList;
+import br.dcc.ufmg.pm.mimimi.lazy.AbstractLazyList;
+import br.dcc.ufmg.pm.mimimi.lazy.LikesLazyList;
+import br.dcc.ufmg.pm.mimimi.lazy.FollowersLazyList;
+import br.dcc.ufmg.pm.mimimi.lazy.MimimisLazyList;
+import br.dcc.ufmg.pm.mimimi.lazy.HashtagLazyList;
+import br.dcc.ufmg.pm.mimimi.lazy.FollowingLazyList;
+
+import br.dcc.ufmg.pm.mimimi.model.Mimimi;
+import br.dcc.ufmg.pm.mimimi.model.Connection;
+import br.dcc.ufmg.pm.mimimi.model.LikeId;
+import br.dcc.ufmg.pm.mimimi.model.Like;
+import br.dcc.ufmg.pm.mimimi.model.User;
+import br.dcc.ufmg.pm.mimimi.model.EntityInterface;
+import br.dcc.ufmg.pm.mimimi.model.ConnectionId;
 
 /**
  * Main class for starting Tomcat Embeded with the Mimimi application

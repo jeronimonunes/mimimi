@@ -40,7 +40,7 @@
 		<div style="padding-top: 1em">
 			<p:commandButton action="#{loginBean.login}" update="@form"
 				value="#{messages['mimimi.login']}" />
-			<p:commandButton action="pretty:signup"
+			<p:commandButton action="pretty:signup" immediate="true"
 				value="#{messages['mimimi.signup']}" />
 		</div>
 	</h:form>

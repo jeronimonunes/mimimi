@@ -70,13 +70,18 @@ public class LoginBean extends AbstractBean {
 	 * @return "pretty:feed" if the login was successful null otherwise
 	 */
 	public String login() {
-		user = getDao(UserDao.class).login(username,password);
-		if(user==null){
-			addError("Usuários ou senha inválidos");
-			return null;
-		} else {
-			getSession().setAttribute("logged", Boolean.TRUE);
-			return "pretty:feed";
+		try {
+			user = getDao(UserDao.class).login(username,password);
+			if(user==null){
+				addError("Usuários ou senha inválidos");
+				return null;
+			} else {
+				getSession().setAttribute("logged", Boolean.TRUE);
+				return "pretty:feed";
+			}
+		} catch(Exception e) {
+			LOGGER.error("An error occurred while trying to login",e);
+			return "pretty:";
 		}
 	}
 	
