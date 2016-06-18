@@ -16,6 +16,13 @@ import javax.persistence.Table;
 	@NamedQuery(name=Like.LIST_BY_USER, query="select l from Like l where l.id.user = :user"),
 	@NamedQuery(name=Like.LIST_MIMIMIS_BY_USER, query="select l.id.mimimi from Like l where l.id.user = :user")
 })
+/**
+ * Entity that represents that a {@link User} liked a {@link Mimimi}
+ * @author Alexandre Alphonsos Rodrigues Pereira
+ * @author Jeronimo Nunes Rocha
+ * @author Felipe Marcelino
+ *
+ */
 public class Like implements EntityInterface<LikeId> {
 
 	private static final long serialVersionUID = 1L;

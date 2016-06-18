@@ -35,6 +35,13 @@ import org.hibernate.annotations.OnDeleteAction;
 	@NamedQuery(name=Mimimi.COUNT_FEED, query="select count(m) from Mimimi m where m.user in (select c.id.followed from Connection c where c.id.follower = :user) or (m.user = :user)"),
 	@NamedQuery(name=Mimimi.LIST_FEED, query="select m from Mimimi m where m.user in (select c.id.followed from Connection c where c.id.follower = :user) or (m.user = :user) order by m.id desc")
 })
+/**
+ * Entity that represents a message published by an {@link User}
+ * @author Alexandre Alphonsos Rodrigues Pereira
+ * @author Jeronimo Nunes Rocha
+ * @author Felipe Marcelino
+ *
+ */
 public class Mimimi implements EntityInterface<Long> {
 
 	private static final long serialVersionUID = 1L;

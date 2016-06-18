@@ -17,6 +17,13 @@ import javax.persistence.Table;
 	@NamedQuery(name=Connection.LIST_USERS_FOLLOWERS, query="select c.id.follower from Connection c where c.id.followed = :user"),
 	@NamedQuery(name=Connection.LIST_USERS_FOLLOWED, query="select c.id.followed from Connection c where c.id.follower = :user")
 })
+/**
+ * Entity that represents a relationship between two {@link User}
+ * @author Alexandre Alphonsos Rodrigues Pereira
+ * @author Jeronimo Nunes Rocha
+ * @author Felipe Marcelino
+ *
+ */
 public class Connection implements EntityInterface<ConnectionId> {
 	
 	private static final long serialVersionUID = 1L;
