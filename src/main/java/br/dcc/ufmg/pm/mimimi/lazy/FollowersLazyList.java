@@ -3,6 +3,13 @@ package br.dcc.ufmg.pm.mimimi.lazy;
 import br.dcc.ufmg.pm.mimimi.dao.ConnectionDao;
 import br.dcc.ufmg.pm.mimimi.model.User;
 
+/**
+ * {@link AbstractLazyList} to load the {@link User}'s followers page
+ * @author Alexandre Alphonsos Rodrigues Pereira
+ * @author Jeronimo Nunes Rocha
+ * @author Felipe Marcelino
+ *
+ */
 public class FollowersLazyList extends AbstractLazyList<User> {
 	
 	private static final long serialVersionUID = 1L;

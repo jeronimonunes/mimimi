@@ -11,6 +11,13 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * Filter to forbid access to unlogged users to restricted pages
+ * @author Alexandre Alphonsos Rodrigues Pereira
+ * @author Jeronimo Nunes Rocha
+ * @author Felipe Marcelino
+ *
+ */
 public class AuthenticationFilter implements Filter {
 
 	@Override

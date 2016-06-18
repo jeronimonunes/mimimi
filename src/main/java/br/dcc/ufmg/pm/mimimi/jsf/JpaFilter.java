@@ -13,6 +13,13 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
+/**
+ * {@link Filter} to inject {@link EntityManager} in the {@link ServletRequest}
+ * @author Alexandre Alphonsos Rodrigues Pereira
+ * @author Jeronimo Nunes Rocha
+ * @author Felipe Marcelino
+ *
+ */
 public class JpaFilter implements Filter {
 
 	public static final String ENTITY_MANAGER = "entityManager";

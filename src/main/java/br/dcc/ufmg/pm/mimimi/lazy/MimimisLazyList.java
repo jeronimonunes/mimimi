@@ -4,6 +4,13 @@ import br.dcc.ufmg.pm.mimimi.dao.MimimiDao;
 import br.dcc.ufmg.pm.mimimi.model.Mimimi;
 import br.dcc.ufmg.pm.mimimi.model.User;
 
+/**
+ * {@link AbstractLazyList} to load the {@link User}'s mimimis page
+ * @author Alexandre Alphonsos Rodrigues Pereira
+ * @author Jeronimo Nunes Rocha
+ * @author Felipe Marcelino
+ *
+ */
 public class MimimisLazyList extends AbstractLazyList<Mimimi> {
 	
 	private static final long serialVersionUID = 1L;

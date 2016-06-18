@@ -4,6 +4,13 @@ import javax.faces.application.Resource;
 import javax.faces.application.ResourceHandler;
 import javax.faces.application.ResourceHandlerWrapper;
 
+/**
+ * {@link ResourceHandler} that will send a default picture if the user doesn't have a picture or cover
+ * @author Alexandre Alphonsos Rodrigues Pereira
+ * @author Jeronimo Nunes Rocha
+ * @author Felipe Marcelino
+ *
+ */
 public class ResourceHandlerImpl extends ResourceHandlerWrapper {
 
 	private static final String USER_PICTURES_LIBRARY = "user";

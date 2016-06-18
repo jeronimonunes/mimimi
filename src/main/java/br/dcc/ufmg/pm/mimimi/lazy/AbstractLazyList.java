@@ -12,6 +12,14 @@ import br.dcc.ufmg.pm.mimimi.dao.Dao;
 import br.dcc.ufmg.pm.mimimi.dao.DaoFactory;
 import br.dcc.ufmg.pm.mimimi.model.EntityInterface;
 
+/**
+ * Class to bring data from dao in pages to be used along with primefaces lazy components
+ * @author Alexandre Alphonsos Rodrigues Pereira
+ * @author Jeronimo Nunes Rocha
+ * @author Felipe Marcelino
+ *
+ * @param <T> The {@link EntityInterface} that will be recovered from database
+ */
 public abstract class AbstractLazyList<T extends EntityInterface<? extends Serializable>> extends LazyDataModel<T>{
 
 	private static final long serialVersionUID = 1L;

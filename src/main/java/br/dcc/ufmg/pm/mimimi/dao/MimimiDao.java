@@ -5,6 +5,13 @@ import java.util.List;
 import br.dcc.ufmg.pm.mimimi.model.Mimimi;
 import br.dcc.ufmg.pm.mimimi.model.User;
 
+/**
+ * {@link Dao} extended for {@link Mimimi}
+ * @author Alexandre Alphonsos Rodrigues Pereira
+ * @author Jeronimo Nunes Rocha
+ * @author Felipe Marcelino
+ *
+ */
 public interface MimimiDao extends Dao<Long,Mimimi> {
 	
 	public Long countMimimis(User user);

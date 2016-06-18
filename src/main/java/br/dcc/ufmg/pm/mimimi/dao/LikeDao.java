@@ -7,6 +7,13 @@ import br.dcc.ufmg.pm.mimimi.model.LikeId;
 import br.dcc.ufmg.pm.mimimi.model.Mimimi;
 import br.dcc.ufmg.pm.mimimi.model.User;
 
+/**
+ * {@link Dao} extended for {@link Like}
+ * @author Alexandre Alphonsos Rodrigues Pereira
+ * @author Jeronimo Nunes Rocha
+ * @author Felipe Marcelino
+ *
+ */
 public interface LikeDao extends Dao<LikeId,Like> {
 	
 	public Long countLikes(User user);
